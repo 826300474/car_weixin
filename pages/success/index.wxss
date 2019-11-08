@@ -11,9 +11,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-
-  
 }
 .box image{
   width: 100rpx;
