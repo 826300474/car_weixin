@@ -1,0 +1,15 @@
+.scroll-view {
+  width: 100%;
+  white-space: nowrap;
+  height: 40px;
+  border-bottom: solid 1px #f2f2f2;
+}
+
+.scroll-view .item {
+  line-height: 38px;
+  margin: 0 20rpx;
+  display: inline-block;
+}
+.scroll-view .item.active{
+  border-bottom: 2px solid blue;
+}

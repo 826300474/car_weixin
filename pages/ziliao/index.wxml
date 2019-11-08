@@ -1,0 +1,53 @@
+<view>
+  <form bindsubmit="formSubmit">
+    <view class="title">
+      <text>地区/行业</text>
+    </view>
+    <view class="item">
+      <view class="li">
+        <view>
+          <text>地区</text>
+        </view>
+        <view>
+          <picker name="diqu" mode="region" bindchange="bindRegionChange">
+            <view class="picker" wx:if="{{  region.length > 0}}">
+              {{region[0]}}-{{region[1]}}-{{region[2]}}</view>
+            <view class="picker" wx:else>请选择地区</view>
+          </picker>
+        </view>
+      </view>
+      <view class="li">
+        <view>
+          <text>行业</text>
+        </view>
+        <view>
+          <text>请选择行业</text>
+        </view>
+      </view>
+    </view>
+    <view class="title" style="margin-top:10px;">
+      <text>门店认证</text>
+    </view>
+    <view class="item">
+      <view class="li">
+        <view>
+          <text>门店名称</text>
+        </view>
+        <view>
+          <input name="input" placeholder="请输入门店名称"></input>
+        </view>
+      </view>
+      <view class="li">
+        <view>
+          <text>营业证明</text>
+        </view>
+        <view>
+          <text></text>
+        </view>
+      </view>
+    </view>
+    <view class="btn_box">
+      <button formType="submit">提交申请</button>
+    </view>
+  </form>
+</view>

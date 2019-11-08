@@ -1,0 +1,11 @@
+<view>
+  <view class="top_box">
+    <nav-scrol prop-data="{{ navList }}" bind:navClick="navClick"></nav-scrol>
+  </view>
+  <view class="list_box">
+    <view wx:for="{{list}}" class="item" wx:key="{{ item.id }}">
+      <index-item prop-data="{{ item }}"></index-item>
+    </view>
+  </view>
+  
+</view>

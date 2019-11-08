@@ -1,0 +1,14 @@
+<view>
+  <view>
+    <swiper indicator-dots autoplay circular>
+      <block wx:for="{{banner}}" wx:key="*this">
+          <swiper-item>
+            <image mode="aspectFill" src="{{ item }}"></image>
+          </swiper-item>
+        </block>
+    </swiper>
+  </view>
+  <view wx:for="{{list}}" class="item" wx:key="{{ item.id }}">
+    <index-item prop-data="{{ item }}"></index-item>
+  </view>
+</view>

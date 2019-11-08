@@ -1,0 +1,69 @@
+.yi{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  align-items: center;
+}
+.yi .left{
+  display: flex;
+  align-items: center;
+}
+.yi .right{
+  font-size: 12px;
+  color: #666666;
+}
+.yi .left image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.er{
+  padding: 20rpx;
+}
+.si{
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  justify-content: space-between;
+  line-height: 40px;
+  border-top: 1px #f2f2f2 solid; 
+  background: #fff;
+}
+.si .left{
+  margin-left: 20rpx;
+}
+.si .right{
+  background: red;
+  width: 50%;
+  text-align: center;
+}
+.video_box{
+  position: relative;
+}
+.paytoast{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+video{
+  width: 100%;
+  display: block;
+}
+.san{
+  padding: 20rpx;
+}
+.wu{
+  margin-bottom: 40px;
+}
+.wu .title{
+  padding: 20rpx;
+}

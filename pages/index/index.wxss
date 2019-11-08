@@ -1,0 +1,7 @@
+.item{
+  border-bottom: solid 1rpx #f2f2f2;
+}
+swiper image{
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,20 @@
+view {
+  box-sizing: border-box;
+}
+text,input,textarea{
+  font-size: 14px;
+}
+.text_one{
+  white-space:nowrap; 
+  overflow:hidden; 
+  text-overflow:ellipsis;
+}
+
+.text_two{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}

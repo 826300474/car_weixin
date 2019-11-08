@@ -1,0 +1,3 @@
+<scroll-view scroll-x class="scroll-view">
+  <view id="{{ idx }}" bindtap="goto" wx:for-index="idx" class="item {{ item.state ? 'active':'' }}" wx:for="{{ propData }}" wx:key="{{ idx }}">{{ item.label }}</view>
+</scroll-view>

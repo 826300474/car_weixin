@@ -1,0 +1,19 @@
+<view>
+  <view class="yi">
+    <view class="left">
+      <image src="https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg"></image>
+      <text>用户昵称</text>
+    </view>
+    <view class="right">
+      <view>付费</view>
+    </view>
+  </view>
+  <view class="er">
+    标题标题标题标题标题标题标题标题标题标题标题
+  </view>
+  <view class="san"></view>
+  <view class="si">
+    <view class="left">收藏</view>
+    <view class="right">1.8 购买</view>
+  </view>
+</view>

@@ -1,0 +1,41 @@
+<view class="item" bindtap="goto">
+  <view wx:if="{{ propData.multi_imgs.length>1 && propData.article_type === 0}}" class="yi">
+    <view class="text_two title">
+      <text>{{ propData.title }}</text>
+    </view>
+    <view class="photo_box">
+      <view class="photo" wx:for="{{ propData.multi_imgs }}" wx:key="{{idx}}" wx:for-index="idx">
+        <image class="img" src="{{ item }}" mode="aspectFill" lazy-load="true"></image>
+      </view>
+    </view>
+    <view class="bottom_box">
+      <view>{{ propData.num }}</view>
+      <view>{{ propData.num === 1 ? "免费" : "付费" }}</view>
+    </view>
+  </view>
+
+  <view wx:if="{{ propData.multi_imgs.length===1 && propData.article_type === 0 }}" class="er">
+  <view class="left">
+    <view class="title text_two">
+      {{ propData.title }}
+    </view>
+    <view class="bottom_box">
+      <view>{{ propData.num }}</view>
+      <view>{{ propData.num === 1 ? "免费" : "付费" }}</view>
+    </view>
+  </view>
+    
+    <view class="right">
+      <image class="img" src="{{ propData.multi_imgs[0] }}" mode="aspectFill" lazy-load="true"></image>
+    </view>
+  </view>
+
+  <view wx:if="{{ propData.article_type === 2 }}" class="san">
+    <view class="text_two title">
+      <text>{{ propData.title }}</text>
+    </view>
+    <view class="photo_box">
+      <image class="img" src="{{ propData.multi_imgs[0] }}" mode="aspectFill" lazy-load="true"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+<view class="box">
+  <view>
+    <image src="https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg"></image>
+    <view>{{ title }}</view>
+    <view>{{ msg }}</view>
+    <button size="mini">返回首页</button>
+  </view>
+</view>

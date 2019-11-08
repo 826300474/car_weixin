@@ -1,0 +1,33 @@
+.title{
+  padding: 20rpx 40rpx;
+}
+.title text{
+  font-size: 12px;
+}
+.item {
+  border-top: solid 1px #f2f2f2;
+  border-bottom: solid 1px #f2f2f2;
+  padding: 0 20rpx;
+}
+
+.item .li {
+  padding:30rpx 20rpx;
+  border-bottom: solid 1px #f2f2f2;
+  display: flex;
+}
+.item .li:last-child{
+  border-bottom: none;
+}
+.item .li >view:first-child{
+  width: 200rpx;
+}
+.item .li >view:last-child{
+  color: #666;
+}
+.btn_box{
+  padding: 20rpx;
+  margin-top: 20rpx;
+}
+picker view{
+  font-size: 14px;
+}

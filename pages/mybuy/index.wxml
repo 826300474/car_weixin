@@ -1,0 +1,12 @@
+<view>
+  <view class="top_box">
+    <view id="0" class="{{ activeIndex===0 ? 'active':'' }}" bindtap="changNav">全部</view>
+    <view id="1" class="{{ activeIndex===1 ? 'active':'' }}" bindtap="changNav">视频</view>
+    <view id="2" class="{{ activeIndex===2 ? 'active':'' }}" bindtap="changNav">社交</view>
+  </view>
+  <view class="list_box">
+    <view wx:for="{{list}}" class="item" wx:key="{{ item.id }}">
+      <index-item prop-data="{{ item }}"></index-item>
+    </view>
+  </view>
+</view>

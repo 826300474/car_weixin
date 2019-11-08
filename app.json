@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/ziliao/index",
+    "pages/success/index",
+    "pages/index/index",
+    "pages/shequ/index",
+    "pages/video/index",
+    "pages/wode/index",
+    "pages/xqwenzhang/index",
+    "pages/xqvideo/index",
+    "pages/mybuy/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "狄卡隆",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/shequ/index",
+        "text": "社区"
+      },
+      {
+        "pagePath": "pages/video/index",
+        "text": "视频"
+      },
+      {
+        "pagePath": "pages/wode/index",
+        "text": "我的"
+      }
+    ]
+  }
+}
