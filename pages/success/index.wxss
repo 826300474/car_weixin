@@ -17,4 +17,5 @@
   height: 100rpx;
   display: block;
   margin: 0 auto;
+  
 }
