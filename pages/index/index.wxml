@@ -1,5 +1,9 @@
 <view>
-  <view>
+  <view class="er">
+    <image mode="aspectFit" class="toux" src="https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg"></image>
+    <text class="text_one">王师傅的便当 刚刚观看了视频：文本文本文本文本文</text>
+  </view>
+  <view class="yi">
     <swiper indicator-dots autoplay circular>
       <block wx:for="{{banner}}" wx:key="*this">
           <swiper-item>

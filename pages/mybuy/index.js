@@ -9,7 +9,16 @@ Page({
     pageSize: 5
   },
   onLoad: function(options) {
-    this.getData();
+    if (options.type === 'love' ){
+      wx.setNavigationBarTitle({
+        title: '我的收藏'
+      })
+    }else{
+      wx.setNavigationBarTitle({
+        title: '我的购买'
+      })
+    }
+    this.getData()
   },
   onReachBottom: function () {
     this.setData({

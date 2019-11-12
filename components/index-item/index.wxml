@@ -1,5 +1,5 @@
 <view class="item" bindtap="goto">
-  <view wx:if="{{ propData.multi_imgs.length>1 && propData.article_type === 0}}" class="yi">
+  <!-- <view wx:if="{{ propData.multi_imgs.length>1 && propData.type === 1}}" class="yi">
     <view class="text_two title">
       <text>{{ propData.title }}</text>
     </view>
@@ -9,28 +9,28 @@
       </view>
     </view>
     <view class="bottom_box">
-      <view>{{ propData.num }}</view>
+      <view>{{ propData.num }}次查看</view>
       <view>{{ propData.num === 1 ? "免费" : "付费" }}</view>
     </view>
-  </view>
+  </view> -->
 
-  <view wx:if="{{ propData.multi_imgs.length===1 && propData.article_type === 0 }}" class="er">
+  <view wx:if="{{ propData.topImg && propData.type === 1 }}" class="er">
   <view class="left">
     <view class="title text_two">
       {{ propData.title }}
     </view>
     <view class="bottom_box">
-      <view>{{ propData.num }}</view>
-      <view>{{ propData.num === 1 ? "免费" : "付费" }}</view>
+      <view>{{ propData.viewCount }}次查看</view>
+      <view>{{ propData.isCharge === 1 ? "付费" : "免费" }}</view>
     </view>
   </view>
     
     <view class="right">
-      <image class="img" src="{{ propData.multi_imgs[0] }}" mode="aspectFill" lazy-load="true"></image>
+      <image class="img" src="{{ propData.topImg }}" mode="aspectFill" lazy-load="true"></image>
     </view>
   </view>
 
-  <view wx:if="{{ propData.article_type === 2 }}" class="san">
+  <view wx:if="{{ propData.type === 2 }}" class="san">
     <view class="text_two title">
       <text>{{ propData.title }}</text>
     </view>

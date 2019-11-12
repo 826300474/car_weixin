@@ -8,12 +8,12 @@
       <view>付费</view>
     </view>
   </view>
-  <view class="er">
-    标题标题标题标题标题标题标题标题标题标题标题
+  <view class="er">{{ content.title }}</view>
+  <view class="san">
+    <rich-text nodes="{{content.isSale===1 ? content.content : content.contentFree}}" bindtap="tap"></rich-text>
   </view>
-  <view class="san"></view>
   <view class="si">
     <view class="left">收藏</view>
-    <view class="right">1.8 购买</view>
+    <view class="right" style="background: {{ content.isSalea === 1 ? '#666666' : '#FCE718'}}">{{ content.isSalea === 1 ? "已购买" : "¥"+content.price + " 购买"}}</view>
   </view>
 </view>

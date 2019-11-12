@@ -1,4 +1,4 @@
-let baseURl = 'https://pacaio.match.qq.com'
+let baseURl = 'http://car.api.veeshang.com'
 export default function request(data) {
   let { url, params = '', method = 'GET' } = data;
   return new Promise(function (resolve, reject) {
@@ -11,7 +11,7 @@ export default function request(data) {
       },
       success(res) {
         const data = res.data
-        if (data.code === 0 ){
+        if (data.code === 200 ){
           resolve(data.data)
         }
       }

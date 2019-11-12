@@ -1,1 +1,57 @@
-/* pages/wode/index.wxss */
+.yi{
+  background: #FCD055;
+  padding: 69rpx 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 50rpx;
+}
+.yi view:first-child{
+  display: flex;
+  align-items: center;
+}
+.yi .toux{
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 50%;
+  margin-right: 28rpx;
+}
+.yi text{
+  font-size: 18px;
+}
+.yi .qiandao{
+  font-size: 12px;
+  padding:0 20rpx;
+  border:solid 1px #848484;
+  border-radius: 10rpx;
+  color: #666666;
+}
+.er{
+  
+}
+.er >view{
+  display: flex;
+  width: 100%;
+  padding: 37rpx 28rpx;
+  line-height: 36rpx;
+  background: #fff;
+  position: relative;
+}
+.er >view:nth-of-type(odd){
+  border-bottom: #E6E6E6 solid 1rpx;
+  margin-top:40rpx;
+} 
+.er .logo{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 56rpx;
+}
+.er .you{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 56rpx;
+  position: absolute;
+  right: 0rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}

@@ -1,4 +1,4 @@
-<view>
+<view class="allbBox">
   <view class="top_box">
     <nav-scrol prop-data="{{ navList }}" bind:navClick="navClick"></nav-scrol>
   </view>

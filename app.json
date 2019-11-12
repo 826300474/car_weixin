@@ -1,39 +1,51 @@
 {
   "pages": [
-    "pages/ziliao/index",
-    "pages/success/index",
+    "pages/xqwenzhang/index",
     "pages/index/index",
+    "pages/fenxiao/index",
+    "pages/wode/index",
     "pages/shequ/index",
     "pages/video/index",
-    "pages/wode/index",
-    "pages/xqwenzhang/index",
+    
     "pages/xqvideo/index",
+    "pages/ziliao/index",
+    "pages/success/index",
     "pages/mybuy/index"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#F2F2F2",
     "navigationBarTitleText": "狄卡隆",
+    "backgroundColor": "#F2F2F2",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
+    "selectedColor":"#000000",
+    "color": "#AFAFB7",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+        "iconPath":"assets/Home_Line.png",
+        "selectedIconPath":"assets/Home_icon_grey.png"
       },
       {
         "pagePath": "pages/shequ/index",
-        "text": "社区"
+        "text": "社区",
+        "iconPath": "assets/Post_Line.png",
+        "selectedIconPath": "assets/Post.png"
       },
       {
         "pagePath": "pages/video/index",
-        "text": "视频"
+        "text": "视频",
+        "iconPath": "assets/Video_Line.png",
+        "selectedIconPath": "assets/Video.png"
       },
       {
         "pagePath": "pages/wode/index",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "assets/My.png",
+        "selectedIconPath": "assets/My_icon_grey.png"
       }
     ]
   }

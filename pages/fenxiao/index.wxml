@@ -1,0 +1,29 @@
+<view>
+  <view class="yi" bindlongtap="save">
+    <image src="{{ img }}"></image>
+    <text>长按保存此二维码，并分享给朋友吧</text>
+  </view>
+  <view class="er">
+    <view class="title">我的战绩</view>
+    <view>
+      <view class="item">
+        <view>
+          <view>
+            <image class="toux" src="https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg" mode="aspectFit"></image>
+          </view>
+          <view>
+            <view>
+              <text>178****9900</text>
+            </view>
+            <view class="shop">
+              <text>2019-09-09 12:23</text>
+              <text>商品名称</text>
+            </view>
+          </view>
+        </view>
+        <view>500</view>
+      </view>
+    </view>
+    <!-- <view class="empty">暂无战绩，加油吧</view> -->
+  </view>
+</view>

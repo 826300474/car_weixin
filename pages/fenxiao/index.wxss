@@ -1,0 +1,51 @@
+.yi{
+  padding: 62rpx 0 87rpx 0;
+  background-image: linear-gradient(180deg, #FCE718 0%, #F5A623 100%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.yi image{
+  width: 345rpx;
+  height: 345rpx;
+  border-radius: 50%;
+}
+.yi text{
+  margin-top: 30rpx;
+  color: #fff;
+}
+.er{
+  background: #fff;
+}
+.er .title{
+  text-align: center;
+  padding: 40rpx 0 20rpx 0;
+}
+.er .empty{
+  text-align: center;
+  color: #666;
+  padding: 100rpx;
+}
+.er .item{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 20rpx;
+  border-bottom: solid 1px #EFEFEF;
+}
+.er .item .toux{
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+  margin-right: 20rpx;
+}
+.er .item >view:first-child{
+  display: flex;
+  align-items: center;
+}
+.er .shop text{
+  color:#8D8D8D;
+}
+.er .shop text:first-child{
+  margin-right:20rpx;
+  
+}

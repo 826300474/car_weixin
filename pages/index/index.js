@@ -6,7 +6,7 @@ Page({
   data: {
     list: [],
     banner: ["https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg", "https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg", "https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg"],
-    pageNow: 0,
+    pageNow: 1,
     pageSize: 5
   },
   onLoad: function() {
@@ -24,17 +24,15 @@ Page({
   },
   getData: function() {
     let data = {
-      cid: 56,
-      ext: 'games',
-      token: 'c786875b8e04da17b24ea5e332745e0f',
-      num: this.data.pageSize,
-      expIds: '20190106A13PFT % 7C20190108A04MLS',
-      page: this.data.pageNow,
+      type:'1',
+      pageNum: this.data.pageNow,
+      pageSize: this.data.pageSize,
     }
     getList(data).then(data => {
+      // console.log(data);
       wx.stopPullDownRefresh()
       this.setData({
-        list: [...data, ...this.data.list]
+        list: [...data.content, ...this.data.list]
       })
     })
   },
