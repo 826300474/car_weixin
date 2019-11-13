@@ -6,7 +6,24 @@
     </view>
     <view class="qiandao">签到</view>
   </view>
-  <view class="er">
+  <mp-cells style="margin-top:20px;">
+    <mp-cell link url="../index" value="我的收藏">
+      <image slot="icon" src="{{icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </mp-cell>
+    <mp-cell link url="../index" value="我的购买">
+      <image slot="icon" src="{{icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </mp-cell>
+  </mp-cells>
+  <mp-cells style="margin-top:20px;">
+    <mp-cell link url="../index" value="分销中心">
+      <image slot="icon" src="{{icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </mp-cell>
+    <mp-cell link url="../index" value="退出登录">
+      <image slot="icon" src="{{icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </mp-cell>
+  </mp-cells>
+
+  <!-- <view class=er">
     <view bindtap="goto" id="love">
       <image class="logo" src="/assets/heart.png"></image>
       <text>我的收藏</text>
@@ -27,5 +44,5 @@
       <text>退出登录</text>
       <image class="you" src="/assets/右.png" mode="aspectFit"></image>
     </view>
-  </view>
+  </view> -->
 </view>

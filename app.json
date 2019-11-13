@@ -1,12 +1,11 @@
 {
   "pages": [
-    "pages/xqwenzhang/index",
+    "pages/wode/index",
     "pages/index/index",
     "pages/fenxiao/index",
-    "pages/wode/index",
     "pages/shequ/index",
     "pages/video/index",
-    
+    "pages/xqwenzhang/index",
     "pages/xqvideo/index",
     "pages/ziliao/index",
     "pages/success/index",
