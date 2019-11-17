@@ -1,48 +1,32 @@
 <view>
-  <view class="yi" bindtap="ziliao">
+  <view class="yi">
     <view>
-      <image class="toux" src="https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg"></image>
-      <text>用户名</text>
+      <image class="toux" src="{{ gerenData ? gerenData.avatarUrl : 'https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg' }}"></image>
+      <view>
+        <button wx:if="{{ !gerenData }}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
+        <text wx:else>{{ gerenData.nickName }}</text>
+      </view>
     </view>
     <view class="qiandao">签到</view>
   </view>
-  <mp-cells style="margin-top:20px;">
-    <mp-cell link url="../index" value="我的收藏">
-      <image slot="icon" src="{{icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
-    </mp-cell>
-    <mp-cell link url="../index" value="我的购买">
-      <image slot="icon" src="{{icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
-    </mp-cell>
-  </mp-cells>
-  <mp-cells style="margin-top:20px;">
-    <mp-cell link url="../index" value="分销中心">
-      <image slot="icon" src="{{icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
-    </mp-cell>
-    <mp-cell link url="../index" value="退出登录">
-      <image slot="icon" src="{{icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
-    </mp-cell>
-  </mp-cells>
-
-  <!-- <view class=er">
-    <view bindtap="goto" id="love">
-      <image class="logo" src="/assets/heart.png"></image>
-      <text>我的收藏</text>
-      <image class="you" src="/assets/右.png" mode="aspectFit"></image>
-    </view>
-    <view bindtap="goto" id="buy">
-      <image class="logo" src="/assets/My-我的订单.png"></image>
-      <text>我的购买</text>
-      <image class="you" src="/assets/右.png" mode="aspectFit"></image>
-    </view>
-    <view style="margin-top:40rpx;" bindtap="fenxiao">
-      <image class="logo" src="/assets/MY-分销中心.png"></image>
-      <text>分销中心</text>
-      <image class="you" src="/assets/右.png" mode="aspectFit"></image>
-    </view>
-    <view>
-      <image class="logo" src="/assets/退出.png"></image>
-      <text>退出登录</text>
-      <image class="you" src="/assets/右.png" mode="aspectFit"></image>
-    </view>
-  </view> -->
+  <view style="margin-top:20px">
+    <mp-cells>
+      <mp-cell link hover url="/pages/mybuy/index?type=love" value="我的收藏">
+        <image slot="icon" src="/assets/heart.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </mp-cell>
+      <mp-cell link hover url="/pages/mybuy/index?type=buy" value="我的购买">
+        <image slot="icon" src="/assets/My-我的订单.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </mp-cell>
+    </mp-cells>
+  </view>
+  <view style="margin-top:20px">
+    <mp-cells>
+      <mp-cell link hover url="/pages/fenxiao/index" value="分销中心">
+        <image slot="icon" src="/assets/MY-分销中心.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </mp-cell>
+      <mp-cell link hover value="退出登录">
+        <image slot="icon" src="/assets/退出.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </mp-cell>
+    </mp-cells>
+  </view>
 </view>

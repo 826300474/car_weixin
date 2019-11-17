@@ -3,9 +3,7 @@
     <video id="myVideo" src="{{ videoURL }}" autoplay bindtimeupdate="timeupdate"></video>
     <view wx:if="{{ !playState }}" class="paytoast">20分钟试看结束 购买后观看全片</view>
   </view>
-  <view class="er">
-    标题标题标题标题标题标题标题标题标题标题标题
-  </view>
+  <view class="er">{{ content.title }}</view>
   <view class="yi">
     <view class="left">
       <image src="https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg"></image>
@@ -15,7 +13,9 @@
       <view>4355播放</view>
     </view>
   </view>
-  <view class="san">内容</view>
+  <view class="san">
+    <rich-text nodes="{{content.content}}" bindtap="tap"></rich-text>
+  </view>
   <view class="wu">
     <view class="title">相关推荐</view>
     <view wx:for="{{list}}" class="item" wx:key="{{ item.id }}">
@@ -24,6 +24,6 @@
   </view>
   <view class="si">
     <view class="left">收藏</view>
-    <view class="right">1.8 购买</view>
+    <view class="right" style="background: {{ content.isSalea === 1 ? '#666666' : '#FCE718'}}">{{ content.isSalea === 1 ? "已购买" : "¥"+content.price + " 购买"}}</view>
   </view>
 </view>

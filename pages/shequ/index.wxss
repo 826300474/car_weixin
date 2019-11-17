@@ -5,6 +5,6 @@
   top: 0;
   background: #fff;
 }
-.list_box >.item:first-child{
+.list_box{
   margin-top: 40px;
 }

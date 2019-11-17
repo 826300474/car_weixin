@@ -1,5 +1,5 @@
 <view class="item" bindtap="goto">
-  <!-- <view wx:if="{{ propData.multi_imgs.length>1 && propData.type === 1}}" class="yi">
+  <view wx:if="{{ propData.multi_imgs.length>1 && propData.type === 1}}" class="yi">
     <view class="text_two title">
       <text>{{ propData.title }}</text>
     </view>
@@ -12,7 +12,7 @@
       <view>{{ propData.num }}次查看</view>
       <view>{{ propData.num === 1 ? "免费" : "付费" }}</view>
     </view>
-  </view> -->
+  </view>
 
   <view wx:if="{{ propData.topImg && propData.type === 1 }}" class="er">
   <view class="left">

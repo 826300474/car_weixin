@@ -12,7 +12,5 @@
         </block>
     </swiper>
   </view>
-  <view wx:for="{{list}}" class="item" wx:key="{{ item.id }}">
-    <index-item prop-data="{{ item }}"></index-item>
-  </view>
+  <common-list id="commonList" prop-param="{{ listParam }}"/>
 </view>

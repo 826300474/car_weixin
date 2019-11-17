@@ -13,3 +13,19 @@ export function getXq(params) {
     method: 'GET'
   })
 }
+
+export function getCategories(params) {
+  return request({
+    url: `/wx/article/categories`,
+    method: 'GET',
+    params
+  })
+}
+
+export function login(params) {
+  return request({
+    url: `/wx/member/login`,
+    method: 'POST',
+    params
+  })
+}

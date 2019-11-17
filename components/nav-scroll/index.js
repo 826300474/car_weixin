@@ -1,10 +1,11 @@
 // components/nav-scroll/index.js
 Component({
   properties: {
-    propData:Object
+    propData:Object,
+    propType:Number
   },
   data: {
-
+    
   },
   methods: {
     goto(e){

@@ -1,11 +1,8 @@
-<view>
+<view class="allbBox">
   <view class="top_box">
-    <nav-scrol prop-data="{{ navList }}" bind:navClick="navClick"></nav-scrol>
+    <nav-scrol prop-type="{{ activeNav }}" prop-data="{{ navList }}" bind:navClick="navClick"></nav-scrol>
   </view>
   <view class="list_box">
-    <view wx:for="{{list}}" class="item" wx:key="{{ item.id }}">
-      <index-item prop-data="{{ item }}"></index-item>
-    </view>
+    <common-list id="commonList" prop-param="{{ listParam }}"/>
   </view>
-  
 </view>

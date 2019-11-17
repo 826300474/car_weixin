@@ -1,9 +1,9 @@
 {
-    "usingComponents": {
-      "nav-scrol": "/components/nav-scroll/index",
-      "index-item": "/components/index-item/index"
-    },
-    "enablePullDownRefresh": true,
-    "onReachBottom": true,
-    "onReachBottomDistance": 300
+  "usingComponents": {
+    "nav-scrol": "/components/nav-scroll/index",
+    "common-list": "/components/common-list/index"
+  },
+  "enablePullDownRefresh": true,
+  "onReachBottom": true,
+  "onReachBottomDistance": 300
 }

@@ -1,87 +1,41 @@
 import {
-  getList
+  getCategories
 } from '../../api/index.js'
 Page({
   data: {
     navList: [{
-      'label': '全部',
-      'key': 'all',
-      'state': true
-    }, {
-      'label': '改装',
-      'key': 'change',
-      'state': false
-    }, {
-      'label': '灯饰',
-      'key': 'deng',
-      'state': false
-    }, {
-      'label': '改装',
-      'key': 'change',
-      'state': false
-    }, {
-      'label': '灯饰',
-      'key': 'deng',
-      'state': false
-    }, {
-      'label': '改装',
-      'key': 'change',
-      'state': false
-    }, {
-      'label': '灯饰',
-      'key': 'deng',
-      'state': false
-    }, {
-      'label': '改装',
-      'key': 'change',
-      'state': false
-    }, {
-      'label': '灯饰',
-      'key': 'deng',
-      'state': false
+      'categoryName': '全部',
+      'id': 0,
     }],
-    list: [],
-    pageNow: 0,
-    pageSize: 5
+    activeNav: 0,
+    listParam: {
+      type: 2
+    },
   },
-  onLoad: function(options) {
-    this.getData();
+  onLoad: function (options) {
+    this.getCategories();
+  },
+  onReady: function () {
+    this.commonList = this.selectComponent("#commonList")
   },
   onReachBottom: function () {
-    this.setData({
-      pageNow: this.data.pageNow + 1,
-    }, this.getData())
+    this.commonList.getData("more")
   },
   onPullDownRefresh: function () {
-    this.setData({
-      pageNow: 0,
-    }, this.getData())
+    this.commonList.getData("shuaxin")
   },
-  getData: function () {
-    let data = {
-      cid: 56,
-      ext: 'games',
-      token: 'c786875b8e04da17b24ea5e332745e0f',
-      num: this.data.pageSize,
-      expIds: '20190106A13PFT % 7C20190108A04MLS',
-      page: this.data.pageNow,
-    }
-    getList(data).then(data => {
-      wx.stopPullDownRefresh()
+  getCategories: function () {
+    getCategories({
+      categoryId: '1'
+    }).then(data => {
       this.setData({
-        list: [...data, ...this.data.list]
+        navList: [...this.data.navList, ...data]
       })
     })
   },
-  navClick: function(index) {
-    let num = index.detail;
-    let list = this.data.navList.map((item, index) => {
-      return { ...item,
-        state: index == num ? true : false
-      }
-    })
+  navClick: function (index) {
     this.setData({
-      navList: list
-    }, this.getData())
+      activeNav: index.detail
+    })
   }
 })

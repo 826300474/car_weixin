@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "index-item": "/components/index-item/index"
+    "common-list": "/components/common-list/index"
   },
   "enablePullDownRefresh":true,
   "onReachBottom":true,

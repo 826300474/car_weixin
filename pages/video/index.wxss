@@ -2,8 +2,9 @@
   position: fixed;
   width: 100%;
   left: 0;
+  top: 0;
   background: #fff;
 }
 .list_box{
-  padding-top: 40px;
+  margin-top: 40px;
 }

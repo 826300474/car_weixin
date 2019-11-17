@@ -13,7 +13,6 @@ Page({
       })
       this.getData()
     }
-    this.getData()
   },
   getData:function(){
     getXq({ id: this.data.myId }).then(data=>{
