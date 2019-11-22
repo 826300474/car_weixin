@@ -1,21 +1,36 @@
 // pages/fenxiao/index.js
 Page({
   data: {
-    img:'https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg'
+    img: ""
   },
-  onLoad: function (options) {
+  onLoad: function(options) {
+    try {
+      var value = wx.getStorageSync('openId')
+      if (value) {
+        this.setData({
+          img: 'https://sh-car.oss-cn-hangzhou.aliyuncs.com/' + value + '.jpg.jpg'
+        })
+      }
+    } catch (e) {
 
+    }
   },
-  save:function(){
-    // wx.saveImageToPhotosAlbum({
-    //   filePath: '',
-    //   success(){
-        
-    //   }
-    // })
-    wx.showToast({
-      title: '保存成功',
-      icon:'none'
+  save: function() {
+    wx.downloadFile({
+      url: this.data.img,
+      success(res) {
+        if (res.statusCode === 200) {
+          wx.saveImageToPhotosAlbum({
+            filePath: res.tempFilePath,
+            success() {
+              wx.showToast({
+                title: '保存成功',
+                icon: 'none'
+              })
+            }
+          })
+        }
+      }
     })
   }
 })

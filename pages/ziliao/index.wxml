@@ -21,7 +21,10 @@
           <text>行业</text>
         </view>
         <view>
-          <text>请选择行业</text>
+          <picker name="hangye" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="picker" wx:if="{{ index }}">{{array[index]}}</view>
+            <text wx:else>请选择行业</text>
+          </picker>
         </view>
       </view>
     </view>
@@ -34,7 +37,7 @@
           <text>门店名称</text>
         </view>
         <view>
-          <input name="input" placeholder="请输入门店名称"></input>
+          <input name="input" placeholder="请输入您的店名" maxlength="20"></input>
         </view>
       </view>
       <view class="li">
@@ -42,12 +45,18 @@
           <text>营业证明</text>
         </view>
         <view>
-          <text></text>
+          <view class="photoBox">
+            <view>
+              <mp-uploader ext-class="uploader" bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="2" tips="上传">
+              </mp-uploader>
+            </view>
+          </view>
+          <text style="font-size:12px;">请上传门店照片或营业执照</text>
         </view>
       </view>
     </view>
     <view class="btn_box">
-      <button formType="submit">提交申请</button>
+      <button formType="submit" type="def" loading="{{ loading }}">提交申请</button>
     </view>
   </form>
 </view>

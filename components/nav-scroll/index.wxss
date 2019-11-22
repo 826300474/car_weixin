@@ -4,7 +4,6 @@
   height: 40px;
   border-bottom: solid 1px #f2f2f2;
 }
-
 .scroll-view .item {
   line-height: 38px;
   margin: 0 20rpx;

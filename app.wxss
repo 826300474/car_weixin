@@ -22,3 +22,7 @@ text,input,textarea{
   -ms-text-overflow: ellipsis;
   text-overflow: ellipsis;
 }
+
+button[type="def"]{
+  background:#FCD055;
+}

@@ -1,14 +1,13 @@
 {
   "pages": [
-    "pages/wode/index",
-    "pages/video/index",
-    "pages/shequ/index",
     "pages/index/index",
-    
     "pages/fenxiao/index",
     "pages/xqwenzhang/index",
-    "pages/xqvideo/index",
     "pages/ziliao/index",
+    "pages/video/index",
+    "pages/xqvideo/index",
+    "pages/shequ/index",
+    "pages/wode/index",
     "pages/success/index",
     "pages/mybuy/index"
   ],

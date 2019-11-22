@@ -1,4 +1,4 @@
-let baseURl = 'http://car.api.veeshang.com'
+let baseURl = 'https://car.api.veeshang.com'
 export default function request(data) {
   let {
     url,
@@ -8,6 +8,7 @@ export default function request(data) {
 
   try {
     var value = wx.getStorageSync('openId') || "";
+
     return new Promise(function(resolve, reject) {
       wx.request({
         url: baseURl + url,
@@ -15,7 +16,7 @@ export default function request(data) {
         method: method,
         header: {
           'content-type': 'application/json',
-          'Authorization': 'Bearer ' + value,
+          'Authorization': value,
         },
         success(res) {
           const data = res.data

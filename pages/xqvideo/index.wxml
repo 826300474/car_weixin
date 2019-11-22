@@ -1,7 +1,19 @@
 <view>
   <view class="video_box">
-    <video id="myVideo" src="{{ videoURL }}" autoplay bindtimeupdate="timeupdate"></video>
-    <view wx:if="{{ !playState }}" class="paytoast">20分钟试看结束 购买后观看全片</view>
+    <video 
+      controls="{{ playState ? true : false }}" 
+      enable-progress-gesture="{{ playState ? true : false }}" 
+      id="myVideo" 
+      src="{{ videoURL }}" 
+      autoplay 
+      bindtimeupdate="timeupdate">
+    </video>
+    <view wx:if="{{ !playState }}" class="paytoast">
+      <view>
+        <view>2分钟 试看结束</view>
+        <view>购买后观看全片</view>
+      </view>
+    </view>
   </view>
   <view class="er">{{ content.title }}</view>
   <view class="yi">
@@ -18,12 +30,13 @@
   </view>
   <view class="wu">
     <view class="title">相关推荐</view>
-    <view wx:for="{{list}}" class="item" wx:key="{{ item.id }}">
-      <index-item prop-data="{{ item }}"></index-item>
-    </view>
+    <common-list id="commonList" prop-param="{{ listParam }}"/>
   </view>
   <view class="si">
-    <view class="left">收藏</view>
+    <view class="left">
+      <image src="../../assets/hearted.png"></image>
+      <text>已收藏</text>
+    </view>
     <view class="right" style="background: {{ content.isSalea === 1 ? '#666666' : '#FCE718'}}">{{ content.isSalea === 1 ? "已购买" : "¥"+content.price + " 购买"}}</view>
   </view>
 </view>

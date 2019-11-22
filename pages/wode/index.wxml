@@ -1,10 +1,10 @@
 <view>
   <view class="yi">
     <view>
-      <image class="toux" src="{{ gerenData ? gerenData.avatarUrl : 'https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg' }}"></image>
+      <image class="toux" src="{{ useInfo ? useInfo.avatarUrl : 'https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg' }}" bindtap="ziliao"></image>
       <view>
-        <button wx:if="{{ !gerenData }}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
-        <text wx:else>{{ gerenData.nickName }}</text>
+        <button wx:if="{{ !useInfo }}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
+        <text wx:else bindtap="ziliao">{{ useInfo.nickName }}</text>
       </view>
     </view>
     <view class="qiandao">签到</view>

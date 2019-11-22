@@ -1,5 +1,5 @@
 <view>
-  <view wx:for="{{list}}" class="item" wx:key="{{ item.id }}">
+  <view wx:for="{{propData.length ? propData:list}}" class="item" wx:key="{{ item.id }}">
     <index-item prop-data="{{ item }}"></index-item>
   </view>
 </view>

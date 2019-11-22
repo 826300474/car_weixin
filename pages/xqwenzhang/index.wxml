@@ -4,16 +4,27 @@
       <image src="https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg"></image>
       <text>用户昵称</text>
     </view>
-    <view class="right">
-      <view>付费</view>
-    </view>
+    <view class="right">付费</view>
   </view>
   <view class="er">{{ content.title }}</view>
   <view class="san">
-    <rich-text nodes="{{content.isSale===1 ? content.content : content.contentFree}}" bindtap="tap"></rich-text>
+    <rich-text nodes="{{content.isSale=== 1 ? content.content : content.contentFree}}" bindtap="tap"></rich-text>
   </view>
   <view class="si">
-    <view class="left">收藏</view>
-    <view class="right" style="background: {{ content.isSalea === 1 ? '#666666' : '#FCE718'}}">{{ content.isSalea === 1 ? "已购买" : "¥"+content.price + " 购买"}}</view>
+    <view class="left" bindtap="golike">
+      <view wx:if="{{ like }}">
+        <image src="../../assets/hearted.png"></image>
+        <text>已收藏</text>
+      </view>
+      <view wx:else>
+        <image src="../../assets/heart.png"></image>
+        <text>收藏</text>
+      </view>
+    </view>
+    <view bindtap="buy" class="right" style="background: {{ content.isSale === 1 ? '#e5e5e5' : '#FCE718'}}">{{ content.isSale === 1 ? "已购买" : "¥"+content.price + " 购买"}}</view>
+  </view>
+  <view class="wu">
+    <view class="title">相关推荐</view>
+    <common-list id="commonList" prop-type="recommend" prop-param="{{ listParam }}" prop-data="{{ recommend }}"/>
   </view>
 </view>

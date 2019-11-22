@@ -1,16 +1,45 @@
 const app = getApp()
 import {
-  getList
+  getBanner, getBehavior
 } from '../../api/index.js'
 Page({
   data: {
     listParam:{
       type:1  
     },
-    banner: ["https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg", "https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg", "https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg"],
-    
+    banner: [],
+    behavior:[]
   },
   onLoad: function() {
+    this.getBanner()
+    this.getBehavior()
+  },
+  getBanner:function(){
+    getBanner().then(data=>{
+      this.setData({
+        banner:data
+      })
+    })
+  },
+  getBehavior:function(){
+    getBehavior().then(data=>{
+      this.setData({
+        behavior: data
+      })
+    })
+  },
+  goto:function(e){
+    let index = Number(e.currentTarget.id)
+    let data = this.data.banner[index]
+    if (data.type === 1) {
+      wx.navigateTo({
+        url: '/pages/xqwenzhang/index?id=' + data.id,
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/xqvideo/index?id=' + data.id,
+      })
+    }
   },
   onReady:function(){
     this.commonList = this.selectComponent("#commonList")

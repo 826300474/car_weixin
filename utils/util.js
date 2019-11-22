@@ -1,12 +1,12 @@
 import {
   login
 } from '../api/index.js'
-export function openLogin() {
+export function openLogin(invitedBy = "") {
   wx.login({
     success: res => {
       login({
         "code": res.code,
-        "invitedBy": ""
+        "invitedBy": invitedBy
       }).then(data => {
         try {
           wx.setStorage({

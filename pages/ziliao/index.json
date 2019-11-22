@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "mp-uploader": "../weui-miniprogram/uploader/uploader"
+  },
   "navigationBarTitleText":"注册申请"
 }

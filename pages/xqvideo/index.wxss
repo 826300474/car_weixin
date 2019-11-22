@@ -1,3 +1,6 @@
+.yi,.er,.san{
+  background: #fff;
+}
 .yi{
   display: flex;
   justify-content: space-between;
@@ -13,13 +16,14 @@
   color: #666666;
 }
 .yi .left image{
-  width: 80rpx;
-  height: 80rpx;
+  width: 50rpx;
+  height: 50rpx;
   border-radius: 50%;
   margin-right: 20rpx;
 }
 .er{
   padding: 20rpx;
+  font-size: 20px;
 }
 .si{
   display: flex;
@@ -28,16 +32,28 @@
   left: 0;
   width: 100%;
   justify-content: space-between;
-  line-height: 40px;
+  line-height: 44px;
   border-top: 1px #f2f2f2 solid; 
   background: #fff;
+  font-size: 16px;
 }
 .si .left{
+  width: 285rpx;
   margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.si .left image{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 23rpx;
+}
+.si .left text{
+  font-size: 16px;
 }
 .si .right{
-  background: red;
-  width: 50%;
+  width: 465rpx;
   text-align: center;
 }
 .video_box{
@@ -53,17 +69,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
+}
+.paytoast >view{
+  font-size: 12px;
+  background: rgba(255,255,255,0.8);
+  padding: 20rpx;
+  border-radius: 10rpx;
+  color: #666666;
 }
 video{
   width: 100%;
-  display: block;
+  display: block; 
 }
 .san{
   padding: 20rpx;
 }
 .wu{
-  margin-bottom: 40px;
+  padding-bottom: 44px;
 }
 .wu .title{
   padding: 20rpx;
+  font-size: 18px;
+  background: #fff;
 }

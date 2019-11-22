@@ -23,6 +23,7 @@
   width: 200rpx;
 }
 .item .li >view:last-child{
+  width: 470rpx;
   color: #666;
 }
 .btn_box{
@@ -31,4 +32,25 @@
 }
 picker view{
   font-size: 14px;
+}
+.photoBox{
+  display: flex;
+
+}
+.photoBox text{
+  font-size: 12px;
+}
+.photoBox >view{
+  width: 470rpx;
+  /* border: dashed 1px #f2f2f2;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  text-align: center; */
+}
+.weui-uploader__hd{
+  display: none;
+}
+.weui-uploader__img,.weui-uploader__input,.weui-uploader__input-box{
+  width: 200rpx!important;
+  height: 200rpx!important;
 }

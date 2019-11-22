@@ -13,35 +13,68 @@
   justify-content: space-between;
 }
 .yi .photo_box .photo{
-  width: 230rpx;
-  height: 161rpx;
+  width: 224rpx;
+  height: 170rpx;
+}
+.yi .title,.er .title{
+  margin: 10rpx 0 10rpx 0;
+  min-height: 110rpx;
+}
+.san .title{
+  margin: 10rpx 0 10rpx 0;
 }
 .title{
-  margin: 10rpx 0 10rpx 0;
-  min-height: 44px;
-}
-.title text{
-  font-size: 16px;
+  font-size: 14px;
 }
 .er{
   display: flex;
   justify-content: space-between;
 }
 .er .left{
-  width: 480rpx;
+  width: 486rpx;
   padding-right: 20rpx;
-
 }
 .er .right{
-  width: 230rpx;
-  height: 161rpx;
+  width: 224rpx;
+  height: 170rpx;
 }
 .san .photo_box{
   width: 710rpx;
   height: 355rpx;
+  background: rgba(0,0,0,0.1);
+  position: relative;
+  border-radius: 10rpx;
 }
+.san .photo_box .bottom{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 20rpx;
+  color: #fff;
+}
+
+.san .photo_box .play{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50rpx;
+  height: 50rpx;
+  transform: translate(-50%,-50%);
+}
+
+.san .photo_box .bottom view:last-child{
+  color: #818FA7;
+  background: #fff;
+  padding: 0 10rpx;
+  border-radius: 10rpx;
+}
+
 .bottom_box{
-  margin-top: 20rpx;
+  /* margin-top: 20rpx; */
   display: flex;
   justify-content: space-between;
   font-size: 10px;

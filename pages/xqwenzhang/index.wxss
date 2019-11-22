@@ -1,3 +1,6 @@
+.yi,.er,.san{
+  background: #fff;
+}
 .yi{
   display: flex;
   justify-content: space-between;
@@ -9,35 +12,62 @@
   align-items: center;
 }
 .yi .left image{
-  width: 80rpx;
-  height: 80rpx;
+  width: 50rpx;
+  height: 50rpx;
   border-radius: 50%;
   margin-right: 20rpx;
 }
+.yi .right{
+  background: #FCD055;
+  border-radius: 20rpx;
+  padding:0rpx 15rpx;
+  font-size: 10px;
+  color: #7A7A7A;
+}
 .er{
   padding: 20rpx;
+  font-size: 16px;
 }
 .si{
   display: flex;
   position: fixed;
+  z-index: 1000;
   bottom: 0;
   left: 0;
   width: 100%;
   justify-content: space-between;
   line-height: 44px;
-  border-top: 1px #D9D9D9 solid; 
+  border-top: 1px #f2f2f2 solid; 
+  background: #fff;
+  font-size: 16px;
 }
 .si .left{
-  width: 40%;
+  width: 285rpx;
+  margin-left: 20rpx;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.si .left image{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 23rpx;
+}
+.si .left text{
+  font-size: 16px;
+}
 .si .right{
-  /* background: #FCE718; */
-  width: 60%;
+  width: 465rpx;
   text-align: center;
 }
 .san{
+  padding: 20rpx 20rpx 64rpx 20rpx;
+}
+.wu{
+  padding-bottom: 44px;
+}
+.wu .title{
   padding: 20rpx;
+  font-size: 18px;
+  background: #fff;
 }

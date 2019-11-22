@@ -1,22 +1,21 @@
 Page({
   data: {
-    gerenData:""
+    useInfo:""
   },
   onLoad: function(options) {
-    // this.getInfo()
-    // try {
-    //   var openId = wx.getStorageSync('openId') || ""
-    //   if (openId) {
-    //     this.getInfo()
-    //   }
-    // } catch(e) {
-
-    // }
+    let useInfo =  wx.getStorageSync("useInfo")
+    this.setData({
+      useInfo: useInfo
+    })
   },
   onGotUserInfo: function (e) {
-    console.log(e.detail.userInfo)
     this.setData({
       gerenData: e.detail.userInfo
+    },()=>{
+      wx.setStorage({
+        key: 'useInfo',
+        data: e.detail.userInfo,
+      })
     })
   },
   goto: function(e) {

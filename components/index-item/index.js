@@ -13,6 +13,7 @@ Component({
   },
   methods: {
     goto: function() {
+
       let data = this.data.propData;
       if (data.type === 1) {
         wx.navigateTo({

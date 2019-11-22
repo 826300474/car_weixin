@@ -29,3 +29,47 @@ export function login(params) {
     params
   })
 }
+
+export function profile(params) {
+  return request({
+    url: `/wx/member/profile`,
+    method: 'GET',
+  })
+}
+
+export function getBanner() {
+  return request({
+    url: `/wx/banner`,
+    method: 'GET',
+  })
+}
+
+export function getBehavior() {
+  return request({
+    url: `/wx/behavior`,
+    method: 'GET',
+  })
+}
+
+export function like(params) {
+  return request({
+    url: `/wx/article/like`,
+    method: 'POST',
+    params
+  })
+}
+
+export function unlike(id) {
+  return request({
+    url: `/wx/article/like/${id}`,
+    method: 'DELETE',
+  })
+}
+
+export function createOrders(params) {
+  return request({
+    url: `/wx/orders/create`,
+    method: 'POST',
+    params
+  })
+}
