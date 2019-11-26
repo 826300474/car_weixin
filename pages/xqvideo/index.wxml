@@ -1,12 +1,6 @@
 <view>
   <view class="video_box">
-    <video 
-      controls="{{ playState ? true : false }}" 
-      enable-progress-gesture="{{ playState ? true : false }}" 
-      id="myVideo" 
-      src="{{ videoURL }}" 
-      autoplay 
-      bindtimeupdate="timeupdate">
+    <video controls="{{ playState ? true : false }}" enable-progress-gesture="{{ playState ? true : false }}" id="myVideo" src="{{ content.videoUrl }}" autoplay bindtimeupdate="timeupdate">
     </video>
     <view wx:if="{{ !playState }}" class="paytoast">
       <view>
@@ -26,17 +20,24 @@
     </view>
   </view>
   <view class="san">
-    <rich-text nodes="{{content.content}}" bindtap="tap"></rich-text>
+    <rich-text nodes="{{(content.isCharge === 0 || content.isSale==1) ? content.content : content.contentFree}}"></rich-text>
   </view>
-  <view class="wu">
+  <view class="wu" wx:if="{{ recommend.length > 0 }}">
     <view class="title">相关推荐</view>
-    <common-list id="commonList" prop-param="{{ listParam }}"/>
+    <common-list id="commonList" prop-type="recommend" prop-data="{{ recommend }}" />
   </view>
   <view class="si">
-    <view class="left">
-      <image src="../../assets/hearted.png"></image>
-      <text>已收藏</text>
+    <view class="left" bindtap="golike">
+      <view wx:if="{{ like }}">
+        <image src="../../assets/hearted.png"></image>
+        <text>已收藏</text>
+      </view>
+      <view wx:else>
+        <image src="../../assets/heart.png"></image>
+        <text>收藏</text>
+      </view>
     </view>
-    <view class="right" style="background: {{ content.isSalea === 1 ? '#666666' : '#FCE718'}}">{{ content.isSalea === 1 ? "已购买" : "¥"+content.price + " 购买"}}</view>
+    <view wx:if="{{content.isCharge === 1}}" bindtap="buy" class="right" style="background: {{ content.isSale === 1 ? '#e5e5e5' : '#FCE718'}}">{{ content.isSale === 1 ? "已购买" : "¥"+content.price + " 购买"}}</view>
+      <view wx:else class="right" style="background:#e5e5e5">免费</view>
   </view>
 </view>

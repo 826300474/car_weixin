@@ -1,0 +1,32 @@
+.box{
+  display: flex;
+}
+.item{
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 10rpx;
+  border-radius: 10rpx;
+  position: relative;
+  overflow: hidden;
+}
+.item:last-child{
+  margin-right: 0;
+}
+.item.add{
+  background: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10rpx;
+}
+.item.pic .pic{
+  width: 100%;
+  height: 100%;
+}
+
+.item.pic .close{
+  position: absolute;
+  top:0;
+  right: 10rpx;
+  /* transform: translate(50%,-50%) */
+}

@@ -1,0 +1,10 @@
+<view class="page">
+    <mp-msg type="{{ data.type }}" title="{{data.title}}">
+        <view slot="desc">{{ data.desc }}</view>
+        <view slot="extend"></view>
+        <view slot="handle">
+            <button id="{{ idx }}" bindtap="buttonTap" wx:for-index="idx" wx:key="idx" type="{{ item.type }}" wx:for="{{ data.handle }}">{{ item.text }}</button>
+        </view>
+        <view slot="footer"></view>
+    </mp-msg>
+</view>

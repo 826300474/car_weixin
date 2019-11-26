@@ -1,0 +1,9 @@
+<view class="box">
+    <view wx:for="{{files}}" class="item pic" wx:for-index="idx">
+      <mp-icon bindtap="close" id="{{idx}}" type="field" icon="close2" color="red" size="{{15}}" class="close"></mp-icon>
+      <image class="pic" src="{{ item.url }}" bindtap="look" id="{{idx}}"></image>
+    </view>
+    <view class="item add" bindtap="chooseImage" wx:if="{{ files.length < 2 }}">
+      <mp-icon icon="add" color="black" size="{{30}}"></mp-icon>
+    </view>
+</view>

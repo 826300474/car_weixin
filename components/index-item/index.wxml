@@ -10,21 +10,21 @@
     </view>
     <view class="bottom_box">
       <view>{{ propData.num }}次查看</view>
-      <view>{{ propData.num === 1 ? "免费" : "付费" }}</view>
+      <view style="background: {{ propData.isCharge === 0 ? '#e5e5e5' : '#FCE718'}}">{{ propData.isCharge === 0 ? "免费" : "付费" }}</view>
     </view>
   </view>
 
   <view wx:if="{{ propData.topImg && propData.type === 1 }}" class="er">
-  <view class="left">
-    <view class="title text_two">
-      {{ propData.title }}
+    <view class="left">
+      <view class="title text_two">
+        {{ propData.title }}
+      </view>
+      <view class="bottom_box">
+        <view>{{ propData.viewCount }}次查看</view>
+        <view style="background: {{ propData.isCharge === 0 ? '#e5e5e5' : '#FCE718'}}">{{ propData.isCharge === 0 ? "免费" : "付费" }}</view>
+      </view>
     </view>
-    <view class="bottom_box">
-      <view>{{ propData.viewCount }}次查看</view>
-      <view>{{ propData.isCharge === 1 ? "付费" : "免费" }}</view>
-    </view>
-  </view>
-    
+
     <view class="right">
       <image class="img" src="{{ propData.topImg }}" mode="aspectFill" lazy-load="true"></image>
     </view>

@@ -1,15 +1,16 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/fenxiao/index",
-    "pages/xqwenzhang/index",
+    "pages/index/index",
     "pages/ziliao/index",
-    "pages/video/index",
     "pages/xqvideo/index",
+    "pages/msg/index",
+    "pages/mybuy/index",
+    
+    "pages/xqwenzhang/index",
+    "pages/video/index",
     "pages/shequ/index",
-    "pages/wode/index",
-    "pages/success/index",
-    "pages/mybuy/index"
+    "pages/wode/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#F2F2F2",

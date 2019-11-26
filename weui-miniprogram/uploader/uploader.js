@@ -171,7 +171,6 @@ Component({
         },
         chooseImage: function chooseImage(e) {
             var _this = this;
-
             if (this.uploading) return;
             wx.chooseImage({
                 count: this.data.maxCount - this.data.files.length,
@@ -209,8 +208,12 @@ Component({
                         _this.setData({ files: newFiles, currentFiles: newFiles });
                         _this.loading = true;
                         _this.data.upload(obj).then(function (json) {
+
+                            
+
                             _this.loading = false;
                             if (json.urls) {
+                              // console.log('aaa', json)
                                 var oldFiles = _this.data.files;
                                 json.urls.forEach(function (url, index) {
                                     oldFiles[len + index].url = url;

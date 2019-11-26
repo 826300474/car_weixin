@@ -6,7 +6,7 @@ import {
 } from '../../api/index.js'
 Page({
   data: {
-    myId: "1",
+    myId: "",
     content: "",
     recommend: [],
     like: null

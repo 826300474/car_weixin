@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "mp-msg": "../weui-miniprogram/msg/msg"
+  },
+  "navigationBarTitleText": "UI组件库"
+}

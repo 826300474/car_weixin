@@ -1,1 +1,15 @@
-/* components/common-list/index.wxss */
+.empty{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.empty image{
+  display: block;
+  width: 200rpx;
+  height: 142rpx;
+  margin: 20px auto;
+}
+
+

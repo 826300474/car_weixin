@@ -9,7 +9,7 @@
           <text>地区</text>
         </view>
         <view>
-          <picker name="diqu" mode="region" bindchange="bindRegionChange">
+          <picker name="diqu" mode="region" value="{{region}}" bindchange="bindRegionChange">
             <view class="picker" wx:if="{{  region.length > 0}}">
               {{region[0]}}-{{region[1]}}-{{region[2]}}</view>
             <view class="picker" wx:else>请选择地区</view>
@@ -21,8 +21,8 @@
           <text>行业</text>
         </view>
         <view>
-          <picker name="hangye" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-            <view class="picker" wx:if="{{ index }}">{{array[index]}}</view>
+          <picker name="hangye" range-key="name" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="picker" wx:if="{{ array[index] }}">{{array[index]['name']}}</view>
             <text wx:else>请选择行业</text>
           </picker>
         </view>
@@ -37,7 +37,7 @@
           <text>门店名称</text>
         </view>
         <view>
-          <input name="input" placeholder="请输入您的店名" maxlength="20"></input>
+          <input name="shopName" value="{{ shopName }}" placeholder="请输入您的店名" maxlength="20"></input>
         </view>
       </view>
       <view class="li">
@@ -47,8 +47,7 @@
         <view>
           <view class="photoBox">
             <view>
-              <mp-uploader ext-class="uploader" bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="2" tips="上传">
-              </mp-uploader>
+              <mp-uploader max="{{ maxNum }}" files="{{files}}" bind:chooseImage="chooseImage" bind:closeImage="closeImage"/>
             </view>
           </view>
           <text style="font-size:12px;">请上传门店照片或营业执照</text>
@@ -59,4 +58,5 @@
       <button formType="submit" type="def" loading="{{ loading }}">提交申请</button>
     </view>
   </form>
+  
 </view>

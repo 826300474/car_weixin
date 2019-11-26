@@ -1,65 +1,58 @@
 import {
-  getList
+  likeList,
+  orderList
 } from '../../api/index.js'
 Page({
   data: {
-    activeIndex:0,
+    listParam: {
+      type: ""
+    },
+    api: { data: "" },
+    activeIndex: 0,
     list: [],
     pageNow: 0,
     pageSize: 5
   },
-  onLoad: function(options) {
-    if (options.type === 'love' ){
+  onLoad: function (options) {
+    if (options.type === 'love') {
       wx.setNavigationBarTitle({
         title: '我的收藏'
       })
-    }else{
+      this.setData({ api: { data: likeList } })
+    } else {
       wx.setNavigationBarTitle({
         title: '我的购买'
       })
+      this.setData({ api: { data: orderList } })
     }
-    this.getData()
+  },
+  onReady: function () {
+    this.commonList = this.selectComponent("#commonList")
   },
   onReachBottom: function () {
-    this.setData({
-      pageNow: this.data.pageNow + 1,
-    }, this.getData())
+    this.commonList.getData("more")
   },
   onPullDownRefresh: function () {
-    this.setData({
-      pageNow: 0,
-    }, this.getData())
+    this.commonList.getData("shuaxin")
   },
-  changNav:function(e){
+  changNav: function (e) {
     this.setData({
-      activeIndex: Number(e.target.id)
-    }, this.getData())
-  },
-  getData: function () {
-    let data = {
-      cid: 56,
-      ext: 'games',
-      token: 'c786875b8e04da17b24ea5e332745e0f',
-      num: this.data.pageSize,
-      expIds: '20190106A13PFT % 7C20190108A04MLS',
-      page: this.data.pageNow,
-    }
-    getList(data).then(data => {
-      wx.stopPullDownRefresh()
-      this.setData({
-        list: [...data, ...this.data.list]
-      })
+      activeIndex: Number(e.target.id),
+      listParam: {
+        type: e.target.id === "0" ? "" : e.target.id
+      },
     })
+    this.commonList.getData("shuaxin")
   },
-  navClick: function(index) {
-    let num = index.detail;
-    let list = this.data.navList.map((item, index) => {
-      return { ...item,
-        state: index == num ? true : false
-      }
-    })
-    this.setData({
-      navList: list
-    }, this.getData())
+  navClick: function (index) {
+    // let num = index.detail;
+    // let list = this.data.navList.map((item, index) => {
+    //   return { ...item,
+    //     state: index == num ? true : false
+    //   }
+    // })
+    // this.setData({
+    //   navList: list
+    // }, this.getData())
   }
 })

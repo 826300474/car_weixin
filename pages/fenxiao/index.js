@@ -1,7 +1,12 @@
-// pages/fenxiao/index.js
+import {
+  fenxiao
+} from '../../api/index.js'
 Page({
   data: {
-    img: ""
+    img: "",
+    page:1,
+    pageSize:10,
+    list:[]
   },
   onLoad: function(options) {
     try {
@@ -14,6 +19,14 @@ Page({
     } catch (e) {
 
     }
+    this.getData();
+  },
+  getData:function(){
+    fenxiao({ page: this.data.page, pageSize: this.data.pageSize } ).then(data=>{
+      this.setData({
+        list: data.list.records
+      })
+    })
   },
   save: function() {
     wx.downloadFile({

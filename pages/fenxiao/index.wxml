@@ -5,8 +5,8 @@
   </view>
   <view class="er">
     <view class="title">我的战绩</view>
-    <view>
-      <view class="item">
+    <view wx:if="{{ list.length }}">
+      <view class="item" wx:for="{{list}}" wx:key="*this">
         <view>
           <view>
             <image class="toux" src="https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg" mode="aspectFit"></image>
@@ -24,6 +24,6 @@
         <view>500</view>
       </view>
     </view>
-    <!-- <view class="empty">暂无战绩，加油吧</view> -->
+    <view class="empty" wx:else>暂无战绩，加油吧</view>
   </view>
 </view>

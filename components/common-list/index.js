@@ -8,7 +8,13 @@ Component({
     propType: {
       type: String,
       value: 'def'
-    }
+    },
+    propAaa: {
+      type:Object,
+      value:{
+        data:getList
+      }
+    },
   },
   data: {
     list: [],
@@ -36,15 +42,17 @@ Component({
         pageSize: this.data.pageSize,
         ...this.data.propParam
       }
-      getList(data).then(data => {
+      this.data.propAaa.data(data).then(data => {
         wx.stopPullDownRefresh()
+        let newData = data.length ? data : data.records
         if (type === 'shuaxin') {
           this.setData({
-            list: [...data.records]
+            list: [...newData]
           })
+          console.log('newData', newData)
         } else {
           this.setData({
-            list: [...data.records, ...this.data.list],
+            list: [...newData, ...this.data.list],
           })
         }
       })

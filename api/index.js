@@ -59,6 +59,20 @@ export function like(params) {
   })
 }
 
+export function likeList(params) {
+  return request({
+    url: `/wx/like`,
+    params
+  })
+}
+
+export function orderList(params) {
+  return request({
+    url: `/wx/orders`,
+    params
+  })
+}
+
 export function unlike(id) {
   return request({
     url: `/wx/article/like/${id}`,
@@ -73,3 +87,35 @@ export function createOrders(params) {
     params
   })
 }
+
+
+export function attachment(params) {
+  return request({
+    url: `/app/attachment`,
+    method: 'POST',
+    params
+  })
+}
+
+export function reg(params) {
+  return request({
+    url: `/wx/member/reg`,
+    method: 'PUT',
+    params
+  })
+}
+
+export function allbytype(params) {
+  return request({
+    url: `/wx/dictionary/all-by-type`,
+    params
+  })
+}
+
+export function fenxiao(params) {
+  return request({
+    url: `/wx/fenxiao`,
+    params
+  })
+}
+

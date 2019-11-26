@@ -1,7 +1,7 @@
 {
     "usingComponents": {
       "nav-scrol": "/components/nav-scroll/index",
-      "index-item": "/components/index-item/index"
+      "common-list": "/components/common-list/index"
     },
     "enablePullDownRefresh": true,
     "onReachBottom": true,
