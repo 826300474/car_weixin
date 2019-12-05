@@ -23,10 +23,17 @@ Page({
   },
   getData:function(){
     fenxiao({ page: this.data.page, pageSize: this.data.pageSize } ).then(data=>{
+      console.log(data.list.records)
       this.setData({
-        list: data.list.records
+        list: this.data.list.concat(data.list.records)
       })
     })
+  },
+  onReachBottom: function () {
+    this.setData({
+      page: this.data.page + 1
+    })
+    this.getData();
   },
   save: function() {
     wx.downloadFile({

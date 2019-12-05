@@ -22,6 +22,11 @@ export default function request(data) {
           const data = res.data
           if (data.code === 200) {
             resolve(data.data)
+          }else{
+            wx.showToast({
+              title: data.message,
+              icon:'none'
+            })
           }
         }
       })

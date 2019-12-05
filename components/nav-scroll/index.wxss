@@ -10,5 +10,5 @@
   display: inline-block;
 }
 .scroll-view .item.active{
-  border-bottom: 2px solid blue;
+  border-bottom: 2px solid #FCD055;
 }

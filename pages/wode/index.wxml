@@ -1,13 +1,13 @@
 <view>
   <view class="yi">
     <view>
-      <image class="toux" src="{{ useInfo ? useInfo.avatarUrl : 'https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg' }}" bindtap="ziliao"></image>
+      <image class="toux" src="{{ useInfo ? useInfo.avatarUrl : '/assets/头像.png' }}" bindtap="ziliao"></image>
       <view>
-        <button wx:if="{{ !useInfo }}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
+        <button wx:if="{{ !useInfo }}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">授权登录</button>
         <text wx:else bindtap="ziliao">{{ useInfo.nickName }}</text>
       </view>
     </view>
-    <view class="qiandao">签到</view>
+    <view class="qiandao" bindtap="{{ profileData.isSigned ? '':sign }}">{{ profileData.isSigned ? '已签到':'签到' }}</view>
   </view>
   <view style="margin-top:20px">
     <mp-cells>
@@ -21,10 +21,10 @@
   </view>
   <view style="margin-top:20px">
     <mp-cells>
-      <mp-cell link hover url="/pages/fenxiao/index" value="分销中心">
+      <mp-cell link hover url="{{ profileData.invitorState === 2 ? '/pages/fenxiao/index' : '/pages/fenxiaoSheng/index?data=' + profileData.invitorState }}" value="分销中心">
         <image slot="icon" src="/assets/MY-分销中心.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
       </mp-cell>
-      <mp-cell link hover value="退出登录">
+      <mp-cell link hover value="退出登录" bindtap="tuichu">
         <image slot="icon" src="/assets/退出.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
       </mp-cell>
     </mp-cells>

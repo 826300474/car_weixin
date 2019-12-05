@@ -16,7 +16,10 @@
   width: 224rpx;
   height: 170rpx;
 }
-.yi .title,.er .title{
+.yi .title{
+ margin: 0 0 10rpx 0; 
+}
+.er .title{
   margin: 10rpx 0 10rpx 0;
   min-height: 110rpx;
 }

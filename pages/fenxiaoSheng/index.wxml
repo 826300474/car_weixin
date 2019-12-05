@@ -1,0 +1,8 @@
+<view>
+  <view class="san">
+    <rich-text nodes="{{fenxiaoArticle}}"></rich-text>
+  </view>
+  <view class="btn">
+    <button disabled="{{ state !== '0' }}" bindtap="invitor" type="{{ state === '0' ? 'primary' : 'default' }}">{{ stateName[state] }} </button>
+  </view>
+</view>

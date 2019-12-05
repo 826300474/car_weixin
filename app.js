@@ -2,6 +2,7 @@
 import { openLogin } from "utils/util.js"
 App({
   onLaunch: function(e) {
+    console.log(e)
     //登录
     try {
       var value = wx.getStorageSync('openId')

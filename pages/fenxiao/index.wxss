@@ -42,10 +42,13 @@
   display: flex;
   align-items: center;
 }
-.er .shop text{
-  color:#8D8D8D;
+.er .shop{
+  width:500rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  color: #8D8D8D;
 }
 .er .shop text:first-child{
   margin-right:20rpx;
-  
 }

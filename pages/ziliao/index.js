@@ -2,10 +2,13 @@ import {
   profile,
   attachment,
   reg,
-  allbytype
+  allbytype,
+  setMobile
 } from '../../api/index.js'
 Page({
   data: {
+    login_code: "",
+    shenData: "",
     hangData: [],
     files: [],
     region: [],
@@ -13,12 +16,42 @@ Page({
     index: "",
     shopName: "",
     maxNum: 1,
-    loading: false
+    loading: false,
+    code: "",
+    codeName: {
+      '-1': '您的申请已被拒绝',
+      '0': '提交申请',
+      '1': '申请中，请耐心等待',
+      '2': '申请通过'
+    }
   },
-  onLoad() {
+  onLoad(options) {
+    let that = this;
+    this.setData({
+      code: options.code
+    })
+    wx.getStorage({
+      key: 'login_code',
+      success: function(res) {
+        that.setData({
+          login_code: res.data
+        })
+      },
+    })
     this.getData()
   },
-  bindMultiPickerColumnChange: function (e) {
+  getPhoneNumber(e) {
+    wx.login({
+      success: res => {
+        setMobile({
+          "code": res.code,
+          "encryptedData": e.detail.encryptedData,
+          "iv": e.detail.iv
+        }).then()
+      }
+    })
+  },
+  bindMultiPickerColumnChange: function(e) {
     if (e.detail.column === 0) {
       let hangData = this.data.hangData;
       let id = hangData.filter(item => item.parentId === 0)[e.detail.value]['id'];
@@ -31,13 +64,13 @@ Page({
       })
     }
   },
-  chooseImage: function (e) {
+  chooseImage: function(e) {
     var that = this;
     wx.chooseImage({
       count: this.data.maxNum - this.data.files.length,
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function (res) {
+      success: function(res) {
         wx.uploadFile({
           url: 'https://car.api.veeshang.com/app/attachment', //仅为示例，非真实的接口地址
           filePath: res.tempFilePaths[0],
@@ -54,7 +87,7 @@ Page({
       }
     })
   },
-  closeImage: function (e) {
+  closeImage: function(e) {
     // console.log(this.data.files.splice(e.detail, 1) )
     let newData = this.data.files;
     let aaanewData = newData.splice(e.detail, 1)
@@ -62,7 +95,7 @@ Page({
       files: this.data.files
     })
   },
-  getData: function () {
+  getData: function() {
     profile().then(data => {
       allbytype({
         type: "profession",
@@ -72,8 +105,8 @@ Page({
           array: data1
         })
         let index;
-        for (let i = 0; i < data1.length; i++ ) {
-          if (data1[i]['name'] === data.profession){
+        for (let i = 0; i < data1.length; i++) {
+          if (data1[i]['name'] === data.profession) {
             index = i;
           }
         }
@@ -83,62 +116,68 @@ Page({
         }
         let files = [];
         if (data.businessCertificate) {
-          files.push({ url: data.businessCertificate })
+          files.push({
+            url: data.businessCertificate
+          })
         }
         if (data.businessCertificate2) {
-          files.push({ url: data.businessCertificate2 })
+          files.push({
+            url: data.businessCertificate2
+          })
         }
+        // data.customerState = 0
         this.setData({
           region: region,
           index: index,
           shopName: data.shopName,
-          files: files
+          files: files,
+          shenData: data
         })
       })
 
     })
   },
-  bindRegionChange: function (e) {
+  bindRegionChange: function(e) {
     this.setData({
       region: e.detail.value
     })
   },
-  bindPickerChange: function (e) {
+  bindPickerChange: function(e) {
     this.setData({
       index: e.detail.value
     })
   },
-  formSubmit: function (e) {
-    
-    console.log(e.detail.value )
+  formSubmit: function(e) {
 
-    if (e.detail.value.diqu.length === 0 ){
+    console.log(e.detail.value)
+    return;
+    if (e.detail.value.diqu.length === 0) {
       wx.showToast({
         title: '请选择地区',
-        icon:'none'
+        icon: 'none'
       })
       return;
     }
 
-    if (e.detail.value.hangye === ""  ){
+    if (e.detail.value.hangye === "") {
       wx.showToast({
-        icon:'none',
+        icon: 'none',
         title: '请选择行业',
       })
       return;
-    } 
+    }
 
     if (!e.detail.value.shopName) {
       wx.showToast({
-        icon:'none',
+        icon: 'none',
         title: '请填写门店名称',
       })
       return;
-    }   
+    }
 
-    if (this.data.files.length === 0){
+    if (this.data.files.length === 0) {
       wx.showToast({
-        icon:'none',
+        icon: 'none',
         title: '请上传门店照片或营业执照',
       })
       return;
@@ -148,12 +187,12 @@ Page({
     let businessCertificate2;
     if (this.data.files[0]) {
       businessCertificate = this.data.files[0]['url']
-    }else{
+    } else {
       businessCertificate = ""
     }
     if (this.data.files[1]) {
       businessCertificate2 = this.data.files[1]['url']
-    }else{
+    } else {
       businessCertificate2 = ""
     }
     let data = {

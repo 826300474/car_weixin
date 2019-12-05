@@ -4,9 +4,7 @@ import {
 } from '../../api/index.js'
 Page({
   data: {
-    listParam: {
-      type: ""
-    },
+    listParam: {},
     api: { data: "" },
     activeIndex: 0,
     list: [],
@@ -36,12 +34,19 @@ Page({
     this.commonList.getData("shuaxin")
   },
   changNav: function (e) {
-    this.setData({
-      activeIndex: Number(e.target.id),
-      listParam: {
-        type: e.target.id === "0" ? "" : e.target.id
-      },
-    })
+    if (e.target.id === "0") {
+      this.setData({
+        activeIndex: Number(e.target.id),
+        listParam: {},
+      })
+    } else {
+      this.setData({
+        activeIndex: Number(e.target.id),
+        listParam: {
+          type: e.target.id
+        },
+      })
+    }
     this.commonList.getData("shuaxin")
   },
   navClick: function (index) {

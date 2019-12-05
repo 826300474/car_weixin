@@ -25,8 +25,9 @@
   color: #7A7A7A;
 }
 .er{
-  padding: 20rpx;
-  font-size: 16px;
+  padding: 24rpx;
+  font-size: 18px;
+  font-weight: bold;
 }
 .si{
   display: flex;

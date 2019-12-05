@@ -9,19 +9,19 @@
       <view class="item" wx:for="{{list}}" wx:key="*this">
         <view>
           <view>
-            <image class="toux" src="https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg" mode="aspectFit"></image>
+            <image class="toux" src="{{ item.avatarUrl }}" mode="aspectFit"></image>
           </view>
           <view>
             <view>
-              <text>178****9900</text>
+              <text>{{ item.mobile }}</text>
             </view>
             <view class="shop">
-              <text>2019-09-09 12:23</text>
-              <text>商品名称</text>
+              <text>{{ item.payAt }}</text>
+              <text>{{ item.title }}</text>
             </view>
           </view>
         </view>
-        <view>500</view>
+        <view>{{ item.price }}</view>
       </view>
     </view>
     <view class="empty" wx:else>暂无战绩，加油吧</view>

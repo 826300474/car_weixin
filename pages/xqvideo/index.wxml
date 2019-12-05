@@ -1,6 +1,6 @@
 <view>
   <view class="video_box">
-    <video controls="{{ playState ? true : false }}" enable-progress-gesture="{{ playState ? true : false }}" id="myVideo" src="{{ content.videoUrl }}" autoplay bindtimeupdate="timeupdate">
+    <video controls="{{ playState ? true : false }}" enable-progress-gesture="{{ playState ? true : false }}" id="myVideo" src="{{ videoUrl }}" autoplay bindtimeupdate="timeupdate">
     </video>
     <view wx:if="{{ !playState }}" class="paytoast">
       <view>
@@ -10,7 +10,7 @@
     </view>
   </view>
   <view class="er">{{ content.title }}</view>
-  <view class="yi">
+  <!-- <view class="yi">
     <view class="left">
       <image src="https://pic.qqtn.com/up/2019-11/2019110408121188043.jpg"></image>
       <text>用户昵称</text>
@@ -18,9 +18,9 @@
     <view class="right">
       <view>4355播放</view>
     </view>
-  </view>
+  </view> -->
   <view class="san">
-    <rich-text nodes="{{(content.isCharge === 0 || content.isSale==1) ? content.content : content.contentFree}}"></rich-text>
+    <rich-text nodes="{{(content.isCharge === 0 || is_buy==1) ? content.content : content.contentFree}}"></rich-text>
   </view>
   <view class="wu" wx:if="{{ recommend.length > 0 }}">
     <view class="title">相关推荐</view>
@@ -37,7 +37,7 @@
         <text>收藏</text>
       </view>
     </view>
-    <view wx:if="{{content.isCharge === 1}}" bindtap="buy" class="right" style="background: {{ content.isSale === 1 ? '#e5e5e5' : '#FCE718'}}">{{ content.isSale === 1 ? "已购买" : "¥"+content.price + " 购买"}}</view>
+    <view wx:if="{{content.isCharge === 1}}" bindtap="buy" class="right" style="background: {{ is_buy === 1 ? '#e5e5e5' : '#FCE718'}}">{{ is_buy === 1 ? "已购买" : "¥"+content.price + " 购买"}}</view>
       <view wx:else class="right" style="background:#e5e5e5">免费</view>
   </view>
 </view>

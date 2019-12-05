@@ -7,6 +7,14 @@ export function getList(params) {
   })
 }
 
+export function config(params) {
+  return request({
+    url: '/wx/config',
+    method: 'GET',
+    params
+  })
+}
+
 export function getXq(params) {
   return request({
     url: `/wx/article/${params.id}`,
@@ -29,6 +37,15 @@ export function login(params) {
     params
   })
 }
+
+export function sign(params) {
+  return request({
+    url: `/wx/behavior/sign`,
+    method: 'POST',
+    params
+  })
+}
+
 
 export function profile(params) {
   return request({
@@ -100,6 +117,23 @@ export function attachment(params) {
 export function reg(params) {
   return request({
     url: `/wx/member/reg`,
+    method: 'PUT',
+    params
+  })
+}
+
+export function setMobile(params) {
+  return request({
+    url: `/wx/member/set-mobile`,
+    method: 'PUT',
+    params
+  })
+}
+
+
+export function invitor(params) {
+  return request({
+    url: `/wx/member/invitor`,
     method: 'PUT',
     params
   })

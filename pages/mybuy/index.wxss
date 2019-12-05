@@ -14,7 +14,7 @@
   padding: 0 20rpx;
 }
 .top_box .active{
- border-bottom: 2px solid blue;
+ border-bottom: 2px solid #FCD055;
 }
 .list_box{
   padding-top: 40px;

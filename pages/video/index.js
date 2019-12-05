@@ -40,7 +40,7 @@ Page({
         activeNav: type,
         listParam: {
           ...this.data.listParam,
-          category: type
+          categoryId: type
         }
       })
     }else{

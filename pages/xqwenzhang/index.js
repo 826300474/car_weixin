@@ -9,58 +9,76 @@ Page({
     myId: "",
     content: "",
     recommend: [],
+    is_buy:0,
     like: null
   },
-  onLoad: function(options) {
+  onLoad: function (options) {
     if (options.id) {
       this.setData({
         myId: options.id
       })
       this.getData()
     }
-    // this.getData()
   },
-  getData: function() {
+  getData: function () {
+    wx.showLoading({
+      title: '加载中...',
+    })
     getXq({
       id: this.data.myId
     }).then(data => {
-      // console.log(data.recommend)
+      wx.hideLoading()
+      var newStr = data.article.content.replace(/<img/g, '<img style="width:100%" ');
+      data.article.content = newStr;
       this.setData({
         content: data.article,
         like: data.like,
+        is_buy: data.is_buy,
         recommend: data.recommend,
       })
     })
   },
-  golike: function() {
+  golike: function () {
     if (this.data.like) {
-      unlike(this.data.myId).then(data => this.getData())
+      unlike(this.data.myId).then(data => {
+        this.setData({
+          like: null,
+        })
+      })
     } else {
       like({
         articleId: this.data.myId
-      }).then(data => this.getData())
+      }).then(data => {
+        this.setData({
+          like: true,
+        })
+      })
     }
   },
-  buy: function() {
-    createOrders({
-      articleId: this.data.myId
-    }).then(data => {
-      wx.requestPayment({
-        timeStamp: data.timeStamp,
-        nonceStr: data.nonceStr,
-        package: data.package,
-        signType: 'MD5',
-        paySign: data.paySign,
-        success(res) {
-          this.getData()
-        },
-        fail(res) {
-          wx.showToast({
-            title: '支付失败',
-            icon: 'none'
-          })
-        }
+  buy: function () {
+    var that = this;
+    if (this.data.is_buy === 0) {
+      createOrders({
+        articleId: this.data.myId
+      }).then(data => {
+        wx.requestPayment({
+          timeStamp: data.timeStamp,
+          nonceStr: data.nonceStr,
+          package: data.package,
+          signType: 'MD5',
+          paySign: data.paySign,
+          success(res) {
+            that.getData()
+          },
+          fail(res) {
+            wx.showToast({
+              title: '支付失败',
+              icon: 'none'
+            })
+          }
+        })
       })
-    })
+    }
+
   }
 })

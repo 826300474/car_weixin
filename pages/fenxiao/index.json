@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "onReachBottom": true,
+  "onReachBottomDistance": 300,
+  "navigationBarTitleText": "分销中心"
 }

@@ -41,14 +41,14 @@ Page({
         activeNav: type,
         listParam: {
           ...this.data.listParam,
-          category: type
+          categoryId: type
         }
       })
     } else {
       this.setData({
         activeNav: type,
         listParam: {
-          type: 2
+          type: 1
         }
       })
     }
