@@ -4,25 +4,28 @@ import {
 } from '../../api/index.js'
 Page({
   data: {
-    useInfo:"",
-    profileData:"",
+    useInfo: "",
+    profileData: "",
   },
-  onLoad: function(options) {
+  onLoad: function (options) {
     this.getData();
   },
-  sign:function(){
-    sign().then(data=>{
-      this.getData();
-    })
+  sign: function () {
+    if (!this.data.profileData.isSigned) {
+      sign().then(data => {
+        this.getData();
+      })
+    }
+
   },
-  getData:function(){
+  getData: function () {
     let useInfo = wx.getStorageSync("useInfo")
     this.setData({
       useInfo: useInfo,
     })
-    profile().then(data=>{
+    profile().then(data => {
       this.setData({
-        profileData:data
+        profileData: data
       })
     })
   },
@@ -35,22 +38,22 @@ Page({
       data: e.detail.userInfo,
     })
   },
-  goto: function(e) {
+  goto: function (e) {
     wx.navigateTo({
       url: '/pages/mybuy/index?type=' + e.target.id,
     })
   },
-  ziliao: function() {
+  ziliao: function () {
     wx.navigateTo({
       url: '/pages/ziliao/index?code=' + this.data.profileData.invitorState
     })
   },
-  fenxiao: function() {
+  fenxiao: function () {
     wx.navigateTo({
       url: '/pages/fenxiao/index'
     })
   },
-  tuichu:function(){
+  tuichu: function () {
     let that = this;
     wx.showModal({
       title: '',
@@ -60,7 +63,7 @@ Page({
           wx.removeStorageSync("useInfo")
           that.getData();
         } else if (res.cancel) {
-          
+
         }
       }
     })
