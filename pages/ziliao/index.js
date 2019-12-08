@@ -27,6 +27,7 @@ Page({
   },
   onLoad(options) {
     let that = this;
+    // options.code = 0
     this.setData({
       code: options.code
     })
@@ -96,7 +97,11 @@ Page({
     })
   },
   getData: function() {
+    wx.showLoading({
+      title: '加载中...',
+    })
     profile().then(data => {
+      wx.hideLoading()
       allbytype({
         type: "profession",
         pid: 0
@@ -125,7 +130,7 @@ Page({
             url: data.businessCertificate2
           })
         }
-        // data.customerState = 0
+        // data.customerState = 1
         this.setData({
           region: region,
           index: index,
@@ -149,8 +154,6 @@ Page({
   },
   formSubmit: function(e) {
 
-    console.log(e.detail.value)
-    return;
     if (e.detail.value.diqu.length === 0) {
       wx.showToast({
         title: '请选择地区',

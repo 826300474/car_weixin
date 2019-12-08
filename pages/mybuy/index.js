@@ -16,12 +16,12 @@ Page({
       wx.setNavigationBarTitle({
         title: '我的收藏'
       })
-      this.setData({ api: { data: likeList } })
+      this.setData({ api: { data: likeList }, name: 'like'})
     } else {
       wx.setNavigationBarTitle({
         title: '我的购买'
       })
-      this.setData({ api: { data: orderList } })
+      this.setData({ api: { data: orderList }, name: 'order'})
     }
   },
   onReady: function () {

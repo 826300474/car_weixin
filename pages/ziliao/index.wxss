@@ -1,6 +1,11 @@
 .title{
   padding: 20rpx 40rpx;
 }
+.tishi{
+  width: 100%;
+  padding: 20rpx 40rpx;
+  display: inline-block;
+}
 .title text{
   font-size: 12px;
 }

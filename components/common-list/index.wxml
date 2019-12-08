@@ -1,13 +1,10 @@
-<view>
-  <block wx:if="{{  propData.length || list.length }}">
-    <view wx:for="{{propData.length ? propData:list}}" class="item" wx:key="{{ item.id }}">
-      <index-item prop-data="{{ item }}"></index-item>
-    </view>
-  </block>
-  <view wx:else>
-    <view class="empty">
-      <image src="/assets/empty.png"></image>
-      <text>暂无数据哦</text>
-    </view>
-  </view>
+<!-- <view>{{ recycleList.length }}</view> -->
+<recycle-view batch="{{batchSetRecycleData}}" id="{{ 'recycleId' + propId }}" bindscrolltolower="getData" lower-threshold="300" scroll-with-animation="true">
+  <recycle-item wx:for="{{recycleList}}" wx:key="id">
+    <index-item prop-data="{{ item }}"></index-item>
+  </recycle-item>
+</recycle-view>
+<view class="empty" wx:if="{{ recycleList.length === 0 }}">
+  <image src="/assets/empty.png"></image>
+  <text>暂无数据哦</text>
 </view>

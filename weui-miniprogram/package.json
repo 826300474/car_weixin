@@ -3,5 +3,9 @@
     "version": "0.2.0",
     "description": "",
     "author": "xushengni,tomylin,cunjinli,rockhou",
-    "license": "MIT"
+    "license": "MIT",
+    "dependencies": {
+        "miniprogram-recycle-view": "^0.1.5",
+        "wxml-to-canvas": "^1.0.2"
+    }
 }

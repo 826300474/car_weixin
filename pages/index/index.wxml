@@ -1,7 +1,7 @@
 <view>
   <view class="er">
     <image mode="aspectFit" class="toux" src="{{ behavior[0]['avatarUrl'] }}"></image>
-    <text class="text_one">{{ behavior[0]['nickname']}} {{ behavior[0]['createdAt'] }}{{behavior[0]['content']}}</text>
+    <text class="text_one">{{ behavior[0]['nickname']}} {{ behavior[0]['createdAtHuman'] }}{{behavior[0]['content']}}</text>
   </view>
   <view class="yi">
     <swiper indicator-dots autoplay circular>
@@ -12,5 +12,5 @@
         </block>
     </swiper>
   </view>
-  <common-list id="commonList" prop-param="{{ listParam }}"/>
+  <common-list id="commonList" prop-param="{{ listParam }}" prop-id="index"/>
 </view>

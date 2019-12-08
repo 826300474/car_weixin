@@ -3,6 +3,6 @@
     <nav-scrol prop-type="{{ activeNav }}" prop-data="{{ navList }}" bind:navClick="navClick"></nav-scrol>
   </view>
   <view class="list_box">
-    <common-list id="commonList" prop-param="{{ listParam }}"/>
+    <common-list id="commonList" prop-param="{{ listParam }}" prop-id="video"/>
   </view>
 </view>

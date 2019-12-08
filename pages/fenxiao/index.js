@@ -13,7 +13,7 @@ Page({
       var value = wx.getStorageSync('openId')
       if (value) {
         this.setData({
-          img: 'https://sh-car.oss-cn-hangzhou.aliyuncs.com/' + value + '.jpg.jpg'
+          img: 'https://sh-car.oss-cn-hangzhou.aliyuncs.com/' + value + '.jpg'
         })
       }
     } catch (e) {

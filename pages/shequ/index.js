@@ -18,12 +18,12 @@ Page({
   onReady: function () {
     this.commonList = this.selectComponent("#commonList")
   },
-  onReachBottom: function () {
-    this.commonList.getData("more")
-  },
-  onPullDownRefresh: function () {
-    this.commonList.getData("shuaxin")
-  },
+  // onReachBottom: function () {
+  //   this.commonList.getData("more")
+  // },
+  // onPullDownRefresh: function () {
+  //   this.commonList.getData("shuaxin")
+  // },
   getCategories: function () {
     getCategories({
       categoryId: '1'
@@ -34,7 +34,6 @@ Page({
     })
   },
   navClick: function (index) {
-    // console.log(  )
     let type = this.data.navList[index.detail]['id']
     if (type > 0) {
       this.setData({

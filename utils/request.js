@@ -5,10 +5,8 @@ export default function request(data) {
     params = '',
     method = 'GET'
   } = data;
-
   try {
     var value = wx.getStorageSync('openId') || "";
-
     return new Promise(function(resolve, reject) {
       wx.request({
         url: baseURl + url,

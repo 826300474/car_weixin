@@ -1,5 +1,5 @@
 <view class="item" bindtap="goto">
-  <view wx:if="{{ propData.picsArray.length>1 && propData.type === 1}}" class="yi">
+  <view wx:if="{{ propData.picsArray.length>1 && propData.type === 1}}" class="yi" style="height:280rpx">
     <view class="text_two title">
       <text>{{ propData.title }}</text>
     </view>
@@ -8,13 +8,13 @@
         <image class="img" src="{{ item }}" mode="aspectFill" lazy-load="true"></image>
       </view>
     </view>
-    <view class="bottom_box" style="margin-top: 20rpx;">
+    <view class="bottom_box" style="margin-top: 10rpx;">
       <view>{{ propData.viewCount }}次查看</view>
       <view style="background: {{ propData.isCharge === 0 ? '#e5e5e5' : '#FCE718'}}">{{ propData.isCharge === 0 ? "免费" : "付费" }}</view>
     </view>
   </view>
 
-  <view wx:if="{{ (propData.picsArray.length <= 1 || !propData.picsArray) && propData.type === 1 }}" class="er">
+  <view wx:if="{{ (propData.picsArray.length <= 1 || !propData.picsArray) && propData.type === 1 }}" class="er" style="height:170rpx">
     <view class="left">
       <view class="title text_two">
         {{ propData.title }}
@@ -30,7 +30,7 @@
     </view>
   </view>
 
-  <view wx:if="{{ propData.type === 2 }}" class="san">
+  <view wx:if="{{ propData.type === 2 }}" class="san" style="height:415rpx">
     <view class="text_two title">
       <text>{{ propData.title  }}</text>
     </view>

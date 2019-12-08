@@ -5,6 +5,6 @@
     <view id="1" class="{{ activeIndex===1 ? 'active':'' }}" bindtap="changNav">社交</view>
   </view>
   <view class="list_box">
-    <common-list id="commonList" prop-aaa="{{ api }}" prop-param="{{ listParam }}" />
+    <common-list id="commonList" prop-aaa="{{ api }}" prop-param="{{ listParam }}" prop-id="{{ name }}"/>
   </view>
 </view>

@@ -16,7 +16,6 @@ Page({
         this.getData();
       })
     }
-
   },
   getData: function () {
     let useInfo = wx.getStorageSync("useInfo")

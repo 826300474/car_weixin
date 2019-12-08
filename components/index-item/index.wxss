@@ -1,54 +1,78 @@
-.item{
-  padding:20rpx;
+.item {
+  width: 750rpx;
+  padding: 20rpx;
   background: #fff;
   border-bottom: solid 1rpx #f2f2f2;
+  box-sizing: border-box;
 }
-.img{
+
+.img {
   border-radius: 10rpx;
   width: 100%;
   height: 100%;
 }
-.yi .photo_box{
+.yi .photo_box {
   display: flex;
   justify-content: space-between;
 }
-.yi .photo_box .photo{
+
+.yi .photo_box .photo {
   width: 224rpx;
   height: 170rpx;
 }
-.yi .title{
- margin: 0 0 10rpx 0; 
+
+.yi .title {
+  line-height: 60rpx;
+  white-space:nowrap; 
+  overflow:hidden; 
+  text-overflow:ellipsis;
 }
-.er .title{
-  margin: 10rpx 0 10rpx 0;
-  min-height: 110rpx;
+
+.san .title {
+  line-height: 60rpx;
+  
+  /* margin: 0rpx 0 10rpx 0; */
 }
-.san .title{
-  margin: 0rpx 0 10rpx 0;
-}
-.title{
+
+.title {
   font-size: 14px;
 }
-.er{
+
+.er {
   display: flex;
   justify-content: space-between;
 }
-.er .left{
+
+.er .left {
   width: 486rpx;
   padding-right: 20rpx;
 }
-.er .right{
+
+.er .title {
+  margin: 10rpx 0 10rpx 0;
+  min-height: 110rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.er .right {
   width: 224rpx;
   height: 170rpx;
 }
-.san .photo_box{
+
+.san .photo_box {
   width: 710rpx;
   height: 355rpx;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
   position: relative;
   border-radius: 10rpx;
 }
-.san .photo_box .bottom{
+
+.san .photo_box .bottom {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -60,35 +84,35 @@
   color: #fff;
 }
 
-.san .photo_box .play{
+.san .photo_box .play {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 50rpx;
   height: 50rpx;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
-.san .photo_box .bottom view:last-child{
-  color: #818FA7;
+.san .photo_box .bottom view:last-child {
+  color: #818fa7;
   background: #fff;
   padding: 0 10rpx;
   border-radius: 10rpx;
 }
 
-.bottom_box{
+.bottom_box {
   /* margin-top: 20rpx; */
   display: flex;
   justify-content: space-between;
   font-size: 10px;
-  color: #818FA7;
+  color: #818fa7;
   align-content: center;
   align-items: center;
   line-height: 40rpx;
 }
-.bottom_box view:last-child{
-  background: #FCD055;
-  border-radius: 20rpx;
-  padding:0rpx 15rpx;
-}
 
+.bottom_box view:last-child {
+  background: #fcd055;
+  border-radius: 20rpx;
+  padding: 0rpx 15rpx;
+}

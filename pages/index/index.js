@@ -2,6 +2,7 @@ const app = getApp()
 import {
   getBanner, getBehavior
 } from '../../api/index.js'
+import { openLogin } from "../../utils/util.js"
 Page({
   data: {
     listParam:{
@@ -10,9 +11,28 @@ Page({
     banner: [],
     behavior:[]
   },
-  onLoad: function() {
-    this.getBanner()
-    this.getBehavior()
+  onLoad: function (options) {
+    // console.log(options)
+    // if (options.scene) {
+    //   let scene = decodeURIComponent(options.scene);
+    //   console.log(scene )
+    // }
+    //登录
+    try {
+      var value = wx.getStorageSync('openId')
+      if (!value) {
+        openLogin().then(data => {
+          this.getBanner()
+          this.getBehavior()
+          this.commonList.getData("shuaxin")
+        })
+      }else{
+        this.getBanner()
+        this.getBehavior()
+      }
+    } catch (e) {
+
+    }
   },
   getBanner:function(){
     getBanner().then(data=>{
