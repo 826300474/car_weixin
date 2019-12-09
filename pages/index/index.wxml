@@ -1,16 +1,17 @@
 <view>
-  <view class="er">
-    <image mode="aspectFit" class="toux" src="{{ behavior[0]['avatarUrl'] }}"></image>
-    <text class="text_one">{{ behavior[0]['nickname']}} {{ behavior[0]['createdAtHuman'] }}{{behavior[0]['content']}}</text>
-  </view>
-  <view class="yi">
-    <swiper indicator-dots autoplay circular>
-      <block wx:for="{{banner}}" wx:key="{{idx}}" wx:for-index="idx">
+  <common-list id="commonList" prop-param="{{ listParam }}" prop-id="index" prop-height="{{ 0 }}">
+    <view class="er">
+      <image mode="aspectFit" class="toux" src="{{ behavior[0]['avatarUrl'] }}"></image>
+      <text class="text_one">{{ behavior[0]['nickname']}} {{ behavior[0]['createdAtHuman'] }}{{behavior[0]['content']}}</text>
+    </view>
+    <view class="yi">
+      <swiper indicator-dots autoplay circular>
+        <block wx:for="{{banner}}" wx:key="{{idx}}" wx:for-index="idx">
           <swiper-item id="{{idx}}" bindtap="goto">
             <image mode="aspectFill" src="{{ item.picUrl }}"></image>
           </swiper-item>
         </block>
-    </swiper>
-  </view>
-  <common-list id="commonList" prop-param="{{ listParam }}" prop-id="index"/>
+      </swiper>
+    </view>
+  </common-list>
 </view>

@@ -1,11 +1,11 @@
 .scroll-view {
   width: 100%;
   white-space: nowrap;
-  height: 40px;
+  height: 39px;
   border-bottom: solid 1px #f2f2f2;
 }
 .scroll-view .item {
-  line-height: 38px;
+  line-height: 37px;
   margin: 0 20rpx;
   display: inline-block;
 }

@@ -8,24 +8,28 @@
   </view> -->
   <view class="er">{{ content.title }}</view>
   <view class="san">
-    <rich-text nodes="{{(content.isCharge === 0 || is_buy==1) ? content.content : content.contentFree}}"></rich-text>
+    <rich-text nodes="{{(content.isCharge === 0 || is_buy === 1) ? content.content : content.contentFree}}"></rich-text>
+    <view class="buyTishi" wx:if="{{ content.isCharge === 1 && is_buy === 0 }}">购买查看全部内容</view>
   </view>
   <view class="si">
-    <view class="left" bindtap="golike">
-      <view wx:if="{{ like }}">
+    <view class="left">
+      <view wx:if="{{ like }}" bindtap="golike">
         <image src="../../assets/hearted.png"></image>
         <text>已收藏</text>
       </view>
-      <view wx:else>
+      <view wx:else bindtap="golike">
         <image src="../../assets/heart.png"></image>
         <text>收藏</text>
       </view>
+      <view>
+        <image src="../../assets/分享.png"></image>
+        <text>分享</text>
+      </view>
     </view>
-    <view wx:if="{{content.isCharge === 1}}" bindtap="buy" class="right" style="background: {{ is_buy === 1 ? '#e5e5e5' : '#FCE718'}}">{{ is_buy === 1 ? "已购买" : "¥"+content.price + " 购买"}}</view>
-    <view wx:else class="right" style="background:#e5e5e5">免费</view>
+    <view wx:if="{{content.isCharge === 1 && is_buy===0}}" bindtap="buy" class="right" style="background: #FCE718">{{ content.price + " 购买" }}</view>
   </view>
   <view class="wu" wx:if="{{ recommend.length > 0 }}">
     <view class="title">相关推荐</view>
-    <common-list id="commonList" prop-type="recommend" prop-param="{{ listParam }}" prop-data="{{ recommend }}"/>
+    <common-list id="commonList" prop-type="recommend" prop-param="{{ listParam }}" prop-data="{{ recommend }}" />
   </view>
 </view>

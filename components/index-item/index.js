@@ -8,7 +8,7 @@ Component({
       type: Object
     },
   },
-  created:function(){
+  created: function() {
     // console.log(this.data.propData)
   },
   data: {
@@ -21,11 +21,11 @@ Component({
       // return;
       if (data.type === 1) {
         wx.navigateTo({
-          url: '/pages/xqwenzhang/index?id=' + data.id,
+          url: '/pages/xqwenzhang/index?id=' + (data.articleId ? data.articleId : data.id),
         })
       } else {
         wx.navigateTo({
-          url: '/pages/xqvideo/index?id=' + data.id,
+          url: '/pages/xqvideo/index?id=' + (data.articleId ? data.articleId : data.id),
         })
       }
 

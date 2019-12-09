@@ -2,8 +2,9 @@
   width: 750rpx;
   padding: 20rpx;
   background: #fff;
-  border-bottom: solid 1rpx #f2f2f2;
+  /* border-bottom: solid 1rpx red; */
   box-sizing: border-box;
+  margin-bottom: 1px;
 }
 
 .img {

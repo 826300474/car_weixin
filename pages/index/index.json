@@ -2,7 +2,5 @@
   "usingComponents": {
     "common-list": "/components/common-list/index"
   },
-  "enablePullDownRefresh":true,
-  "onReachBottom":true,
-  "onReachBottomDistance":300
+  "enablePullDownRefresh":true
 }

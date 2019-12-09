@@ -12,7 +12,7 @@
   <view style="margin-top:20px">
     <mp-cells>
       <mp-cell link hover url="/pages/mybuy/index?type=love" value="我的收藏">
-        <image slot="icon" src="/assets/heart.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+        <image slot="icon" src="/assets/heart1.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
       </mp-cell>
       <mp-cell link hover url="/pages/mybuy/index?type=buy" value="我的购买">
         <image slot="icon" src="/assets/My-我的订单.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>

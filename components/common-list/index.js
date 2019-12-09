@@ -18,23 +18,26 @@ Component({
         data: getList
       }
     },
-    propId:String
+    propId: String,
+    propHeight: {
+      type: Number,
+      value: 40
+    },
   },
   data: {
     pageNum: 1,
-    pageSize: 5
+    pageSize: 5,
+    height:null
   },
   ready: function () {
-    // console.log(555)
-    // console.log(ctx)
-    // if ( ctx ){
-    //   ctx.destroy()
-    // }
-    ctx = createRecycleContext({
-      id: 'recycleId' + this.data.propId,
-      dataKey: 'recycleList',
-      page: this,
-      itemSize: this.itemSizeFunc
+    let that = this;
+    // console.log(that.data.propHeight)
+    wx.getSystemInfo({
+      success(res) {
+        that.setData({
+          height: res.windowHeight - that.data.propHeight
+        })
+      }
     })
     this.getData("shuaxin")
   },
@@ -59,6 +62,14 @@ Component({
       }
     },
     getData(type) {
+      ctx = createRecycleContext({
+        id: 'recycleId' + this.data.propId,
+        dataKey: 'recycleList',
+        page: this,
+        // useInPage:true,
+        // root:'pages/mybuy/index',
+        itemSize: this.itemSizeFunc
+      })
       if (type && type === "shuaxin") {
         this.setData({
           pageNum: 1
@@ -66,9 +77,8 @@ Component({
         wx.showLoading({
           title: '加载中...',
         })
-        // ctx.splice(0, 1000, [], () => {
-        //   // console.log(555)
-        // })
+        ctx.splice(0, ctx.comp.sizeArray.length, [], () => {
+        })
       } else {
         this.setData({
           pageNum: this.data.pageNum + 1
@@ -88,18 +98,9 @@ Component({
             item.picsArray = item.picsArray.slice(0, 3)
           }
         })
-        
-        ctx.append([...newData])
-        // if (type === 'shuaxin') {
-        //   // console.log(555)
-        //   this.setData({
-        //     list: [...newData]
-        //   })
-        // } else {
-        //   this.setData({
-        //     list: [...newData, ...this.data.list],
-        //   })
-        // }
+        if (newData.length ){
+          ctx.append([...newData])
+        }
       })
     }
   }

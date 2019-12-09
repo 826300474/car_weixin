@@ -6,7 +6,8 @@ Page({
     img: "",
     page:1,
     pageSize:10,
-    list:[]
+    list:[],
+    data:""
   },
   onLoad: function(options) {
     try {
@@ -23,8 +24,9 @@ Page({
   },
   getData:function(){
     fenxiao({ page: this.data.page, pageSize: this.data.pageSize } ).then(data=>{
-      console.log(data.list.records)
+      // console.log(data.list.records)
       this.setData({
+        data:data,
         list: this.data.list.concat(data.list.records)
       })
     })

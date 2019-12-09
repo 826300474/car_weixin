@@ -40,7 +40,6 @@ Page({
     }
   },
   getData: function (tag) {
-    // let that = this;
     wx.showLoading({
       title: '加载中...',
     })
@@ -49,13 +48,14 @@ Page({
       var newStr = data.article.content.replace(/<img/g, '<img style="width:100%" ');
       data.article.content = newStr;
       if (tag) {
+        this.videoContext.play()
         this.setData({
           content: data.article,
           like: data.like,
           is_buy: data.is_buy,
           playState:true
         })
-        this.videoContext.play()
+        
       } else {
         this.setData({
           videoUrl: data.article.videoUrl,

@@ -1,5 +1,5 @@
 <view class="item" bindtap="goto">
-  <view wx:if="{{ propData.picsArray.length>1 && propData.type === 1}}" class="yi" style="height:280rpx">
+  <view wx:if="{{ propData.picsArray.length>1 && propData.type === 1}}" class="yi">
     <view class="text_two title">
       <text>{{ propData.title }}</text>
     </view>
@@ -14,7 +14,7 @@
     </view>
   </view>
 
-  <view wx:if="{{ (propData.picsArray.length <= 1 || !propData.picsArray) && propData.type === 1 }}" class="er" style="height:170rpx">
+  <view wx:if="{{ (propData.picsArray.length <= 1 || !propData.picsArray) && propData.type === 1 }}" class="er">
     <view class="left">
       <view class="title text_two">
         {{ propData.title }}
@@ -30,7 +30,7 @@
     </view>
   </view>
 
-  <view wx:if="{{ propData.type === 2 }}" class="san" style="height:415rpx">
+  <view wx:if="{{ propData.type === 2 }}" class="san">
     <view class="text_two title">
       <text>{{ propData.title  }}</text>
     </view>

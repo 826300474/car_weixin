@@ -27,17 +27,20 @@
     <common-list id="commonList" prop-type="recommend" prop-data="{{ recommend }}" />
   </view>
   <view class="si">
-    <view class="left" bindtap="golike">
-      <view wx:if="{{ like }}">
+    <view class="left">
+      <view wx:if="{{ like }}" bindtap="golike">
         <image src="../../assets/hearted.png"></image>
         <text>已收藏</text>
       </view>
-      <view wx:else>
+      <view wx:else bindtap="golike">
         <image src="../../assets/heart.png"></image>
         <text>收藏</text>
       </view>
+      <view>
+        <image src="../../assets/分享.png"></image>
+        <text>分享</text>
+      </view>
     </view>
-    <view wx:if="{{content.isCharge === 1}}" bindtap="buy" class="right" style="background: {{ is_buy === 1 ? '#e5e5e5' : '#FCE718'}}">{{ is_buy === 1 ? "已购买" : "¥"+content.price + " 购买"}}</view>
-      <view wx:else class="right" style="background:#e5e5e5">免费</view>
+    <view wx:if="{{content.isCharge === 1 && is_buy===0}}" bindtap="buy" class="right" style="background: #FCE718">{{ content.price + " 购买" }}</view>
   </view>
 </view>

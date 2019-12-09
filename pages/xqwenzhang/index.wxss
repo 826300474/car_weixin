@@ -1,35 +1,41 @@
-.yi,.er,.san{
+.yi, .er, .san {
   background: #fff;
 }
-.yi{
+
+.yi {
   display: flex;
   justify-content: space-between;
   padding: 20rpx;
   align-items: center;
 }
-.yi .left{
+
+.yi .left {
   display: flex;
   align-items: center;
 }
-.yi .left image{
+
+.yi .left image {
   width: 50rpx;
   height: 50rpx;
   border-radius: 50%;
   margin-right: 20rpx;
 }
-.yi .right{
-  background: #FCD055;
+
+.yi .right {
+  background: #fcd055;
   border-radius: 20rpx;
-  padding:0rpx 15rpx;
+  padding: 0rpx 15rpx;
   font-size: 10px;
-  color: #7A7A7A;
+  color: #7a7a7a;
 }
-.er{
+
+.er {
   padding: 24rpx;
   font-size: 18px;
   font-weight: bold;
 }
-.si{
+
+.si {
   display: flex;
   position: fixed;
   z-index: 1000;
@@ -38,37 +44,59 @@
   width: 100%;
   justify-content: space-between;
   line-height: 44px;
-  border-top: 1px #f2f2f2 solid; 
+  border-top: 1px #f2f2f2 solid;
   background: #fff;
   font-size: 16px;
 }
-.si .left{
-  width: 285rpx;
+
+.si .left {
+  flex-grow: 1;
   margin-left: 20rpx;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
-.si .left image{
+
+.si .left image {
   width: 36rpx;
   height: 36rpx;
   margin-right: 23rpx;
 }
-.si .left text{
+
+.si .left view{
+  display: flex;
+  align-items: center;
+  color: #666;
+}
+
+.si .left text {
   font-size: 16px;
 }
-.si .right{
-  width: 465rpx;
+
+.si .right {
+  width: 285rpx;
   text-align: center;
 }
-.san{
-  padding: 20rpx 20rpx 64rpx 20rpx;
+
+.san {
+  padding: 20rpx 20rpx 40rpx 20rpx;
 }
-.wu{
+
+.san .buyTishi {
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.wu {
   padding-bottom: 44px;
+  margin-top: 5px;
 }
-.wu .title{
+
+.wu .title {
   padding: 20rpx;
   font-size: 18px;
   background: #fff;
+  padding-bottom: 0;
 }

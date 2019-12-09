@@ -17,5 +17,10 @@
  border-bottom: 2px solid #FCD055;
 }
 .list_box{
-  padding-top: 40px;
+  /* padding-top: 40px; */
+  position: fixed;
+  top: 40px;
+  left: 0;
+  bottom: 0;
+  right: 0; 
 }
