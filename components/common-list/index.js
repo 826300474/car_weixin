@@ -27,11 +27,11 @@ Component({
   data: {
     pageNum: 1,
     pageSize: 5,
-    height:null
+    height: null,
+    emptyState: false
   },
   ready: function () {
     let that = this;
-    // console.log(that.data.propHeight)
     wx.getSystemInfo({
       success(res) {
         that.setData({
@@ -54,7 +54,7 @@ Component({
           height = ctx.transformRpx(170)
         }
       } else {
-        height = ctx.transformRpx(415)
+        height = ctx.transformRpx(435)
       }
       return {
         width: ctx.transformRpx(750),
@@ -62,17 +62,16 @@ Component({
       }
     },
     getData(type) {
-      ctx = createRecycleContext({
-        id: 'recycleId' + this.data.propId,
-        dataKey: 'recycleList',
-        page: this,
-        // useInPage:true,
-        // root:'pages/mybuy/index',
-        itemSize: this.itemSizeFunc
-      })
       if (type && type === "shuaxin") {
+        ctx = createRecycleContext({
+          id: 'recycleId' + this.data.propId,
+          dataKey: 'recycleList',
+          page: this,
+          itemSize: this.itemSizeFunc
+        })
         this.setData({
-          pageNum: 1
+          pageNum: 1,
+          emptyState: false
         })
         wx.showLoading({
           title: '加载中...',
@@ -84,24 +83,30 @@ Component({
           pageNum: this.data.pageNum + 1
         })
       }
-      let data = {
-        pageNum: this.data.pageNum,
-        pageSize: this.data.pageSize,
-        ...this.data.propParam
-      }
-      this.data.propAaa.data(data).then(data => {
-        wx.hideLoading()
-        wx.stopPullDownRefresh()
-        let newData = data.length ? data : data.records
-        newData.forEach(item => {
-          if (item.picsArray) {
-            item.picsArray = item.picsArray.slice(0, 3)
+      if (!this.data.emptyState) {
+        let data = {
+          pageNum: this.data.pageNum,
+          pageSize: this.data.pageSize,
+          ...this.data.propParam
+        }
+        this.data.propAaa.data(data).then(data => {
+          wx.hideLoading()
+          wx.stopPullDownRefresh()
+          let newData = data.length ? data : data.records
+          newData.forEach(item => {
+            if (item.picsArray) {
+              item.picsArray = item.picsArray.slice(0, 3)
+            }
+          })
+          if (newData.length) {
+            ctx.append([...newData])
+          } else {
+            this.setData({
+              emptyState: true
+            })
           }
         })
-        if (newData.length ){
-          ctx.append([...newData])
-        }
-      })
+      }
     }
   }
 })

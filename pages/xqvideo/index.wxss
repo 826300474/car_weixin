@@ -34,10 +34,11 @@
   left: 0;
   width: 100%;
   justify-content: space-between;
-  line-height: 44px;
+  line-height: 40px;
   border-top: 1px #f2f2f2 solid;
   background: #fff;
   font-size: 16px;
+  padding: 5px 0;
 }
 
 .si .left {
@@ -66,7 +67,9 @@
 
 .si .right {
   width: 285rpx;
+  margin-right: 5px;
   text-align: center;
+  border-radius: 4px;
 }
 .video_box{
   position: fixed;
@@ -102,7 +105,7 @@ video{
   padding: 20rpx;
 }
 .wu{
-  padding-bottom: 44px;
+  padding-bottom: 50px;
   margin-top: 5px;
 }
 .wu .title{

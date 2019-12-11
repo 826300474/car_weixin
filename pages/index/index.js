@@ -64,10 +64,4 @@ Page({
   onReady:function(){
     this.commonList = this.selectComponent("#commonList")
   },
-  onReachBottom: function() {
-    this.commonList.getData("more")
-  },
-  onPullDownRefresh: function() {
-    this.commonList.getData("shuaxin")
-  }
 })

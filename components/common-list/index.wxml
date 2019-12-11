@@ -1,5 +1,5 @@
 <!-- <view>{{ recycleList.length }}</view> -->
-<recycle-view batch="{{batchSetRecycleData}}" height="{{ height }}" id="{{ 'recycleId' + propId }}" bindscrolltolower="getData" lower-threshold="300" scroll-with-animation="true">
+<recycle-view batch="{{batchSetRecycleData}}" height="{{ height }}" id="{{ 'recycleId' + propId }}" bindscrolltolower="getData" scroll-with-animation="true">
   <view slot="before">
     <slot></slot>
   </view>

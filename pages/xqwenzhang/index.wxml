@@ -28,8 +28,8 @@
     </view>
     <view wx:if="{{content.isCharge === 1 && is_buy===0}}" bindtap="buy" class="right" style="background: #FCE718">{{ content.price + " 购买" }}</view>
   </view>
-  <view class="wu" wx:if="{{ recommend.length > 0 }}">
+  <!-- <view class="wu" wx:if="{{ recommend.length > 0 }}">
     <view class="title">相关推荐</view>
     <common-list id="commonList" prop-type="recommend" prop-param="{{ listParam }}" prop-data="{{ recommend }}" />
-  </view>
+  </view> -->
 </view>

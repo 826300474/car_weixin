@@ -1,5 +1,8 @@
 {
-  "onReachBottom": true,
-  "onReachBottomDistance": 300,
-  "navigationBarTitleText": "分销中心"
+  "navigationBarTitleText": "分销中心",
+  "onReachBottomDistance":100,
+    "usingComponents": {
+      "recycle-view": "../../weui-miniprogram/miniprogram_npm/miniprogram-recycle-view/recycle-view",
+      "recycle-item": "../../weui-miniprogram/miniprogram_npm/miniprogram-recycle-view/recycle-item"
+    }
 }

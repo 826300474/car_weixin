@@ -1,10 +1,15 @@
 .item {
   width: 750rpx;
   padding: 20rpx;
+  padding-bottom: 0;
   background: #fff;
   /* border-bottom: solid 1rpx red; */
   box-sizing: border-box;
-  margin-bottom: 1px;
+}
+
+.yi, .er, .san {
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 20rpx;
 }
 
 .img {
@@ -12,6 +17,7 @@
   width: 100%;
   height: 100%;
 }
+
 .yi .photo_box {
   display: flex;
   justify-content: space-between;
@@ -24,20 +30,26 @@
 
 .yi .title {
   line-height: 60rpx;
-  white-space:nowrap; 
-  overflow:hidden; 
-  text-overflow:ellipsis;
+}
+
+.yi .title text {
+  font-size: 30rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .san .title {
-  line-height: 60rpx;
-  
-  /* margin: 0rpx 0 10rpx 0; */
+  line-height: 80rpx;
 }
 
-.title {
-  font-size: 14px;
+.san .title text {
+  font-size: 36rpx;
 }
+
+/* .title {
+  font-size: 14px;
+} */
 
 .er {
   display: flex;
@@ -60,6 +72,10 @@
   text-overflow: ellipsis;
 }
 
+.er .title text {
+  font-size: 30rpx;
+}
+
 .er .right {
   width: 224rpx;
   height: 170rpx;
@@ -71,6 +87,17 @@
   background: rgba(0, 0, 0, 0.1);
   position: relative;
   border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.san .photo_box .zhezao {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.35;
+  background: #6e6e6e;
 }
 
 .san .photo_box .bottom {
@@ -80,9 +107,11 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 12px;
   padding: 20rpx;
   color: #fff;
+  z-index: 2;
 }
 
 .san .photo_box .play {
@@ -92,28 +121,37 @@
   width: 50rpx;
   height: 50rpx;
   transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.san .photo_box .bottom view:first-child {
+  font-size: 24rpx;
+  color: #dcdcdc;
 }
 
 .san .photo_box .bottom view:last-child {
   color: #818fa7;
   background: #fff;
   padding: 0 10rpx;
-  border-radius: 10rpx;
+  border-radius: 6rpx;
+  font-size: 16rpx;
+  line-height: 30rpx;
+  opacity: 0.65;
+  background: #fff;
 }
 
 .bottom_box {
-  /* margin-top: 20rpx; */
   display: flex;
   justify-content: space-between;
   font-size: 10px;
   color: #818fa7;
   align-content: center;
   align-items: center;
-  line-height: 40rpx;
 }
 
 .bottom_box view:last-child {
   background: #fcd055;
   border-radius: 20rpx;
-  padding: 0rpx 15rpx;
+  padding: 0rpx 10rpx;
+  font-size: 16rpx;
 }

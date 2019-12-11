@@ -1,39 +1,51 @@
 <view>
-  <view class="yi" bindlongtap="save">
-    <image src="{{ img }}"></image>
-    <text class="tishi">长按保存此二维码，并分享给朋友吧</text>
-    <view class="num">
-      <view>
-        <text>客户总数</text>
-        <text>{{ data.childrenCount }}</text>
-      </view>
-      <view>
-        <text>总购买金额</text>
-        <text>{{ data.sum }}</text>
-      </view>
-    </view>
-  </view>
-  <view class="er">
-    <view class="title">我的战绩</view>
-    <view wx:if="{{ list.length }}">
-      <view class="item" wx:for="{{list}}" wx:key="*this">
-        <view>
+  <recycle-view batch="{{batchSetRecycleData}}" id="recycleId" bindscrolltolower="getData">
+    <view slot="before">
+      <view class="yi" bindlongtap="save">
+        <image src="{{ img }}"></image>
+        <text class="tishi">长按保存此二维码，并分享给朋友吧</text>
+        <view class="num">
           <view>
-            <image class="toux" src="{{ item.avatarUrl }}" mode="aspectFit"></image>
+            <text>客户总数</text>
+            <text>{{ data.childrenCount || 0 }}</text>
           </view>
           <view>
-            <view>
-              <text>{{ item.mobile }}</text>
-            </view>
-            <view class="shop">
-              <text>{{ item.payAt }}</text>
-              <text>{{ item.title }}</text>
-            </view>
+            <text>总购买金额</text>
+            <text>{{ data.sum || 0 }}</text>
           </view>
         </view>
-        <view>{{ item.price }}</view>
       </view>
     </view>
+    <view class="er">
+      <recycle-item wx:for="{{recycleList}}" wx:key="id">
+        <view class="item">
+          <view>
+            <view>
+              <image class="toux" src="{{ item.avatarUrl }}" mode="aspectFit"></image>
+            </view>
+            <view>
+              <view>
+                <text>{{ item.mobile }}</text>
+              </view>
+              <view class="shop">
+                <text>{{ item.payAt }}</text>
+                <text>{{ item.title }}</text>
+              </view>
+            </view>
+          </view>
+          <view>{{ item.price }}</view>
+        </view>
+      </recycle-item>
+    </view>
+
+  </recycle-view>
+
+
+  <!-- <view class="er">
+    <view class="title">我的战绩</view>
+    <view wx:if="{{ list.length }}">
+      
+    </view>
     <view class="empty" wx:else>暂无战绩，加油吧</view>
-  </view>
+  </view> -->
 </view>

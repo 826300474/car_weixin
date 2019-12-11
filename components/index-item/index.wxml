@@ -36,9 +36,10 @@
     </view>
     <view class="photo_box">
       <view class="bottom">
-        <view class="num">{{ propData.viewCount }}次查看</view>
+        <view class="num">{{ propData.viewCount }}次播放</view>
         <view class="num">{{ propData.videoDuration }}</view>
       </view>
+      <view class="zhezao"></view>
       <image class="play" src="../../assets/播放.png"></image>
       <image class="img" src="{{ propData.videoPic }}" mode="aspectFill" lazy-load="true"></image>
     </view>

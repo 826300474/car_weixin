@@ -1,10 +1,11 @@
 .yi{
-  padding: 20rpx;
+  padding: 30rpx;
   background: #fff;
 }
 .yi swiper{
   border-radius: 20rpx;
   overflow: hidden;
+  height: 346rpx;
 }
 .yi swiper image{
   width: 100%;
@@ -22,8 +23,12 @@
   display: flex;
   align-items: center;
 }
+.er text{
+  color: #747474;
+}
 .er image{
   width: 4vh;
   height: 4vh;
   margin-right: 20rpx;
+  border-radius: 50%;
 }

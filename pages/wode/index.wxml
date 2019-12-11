@@ -7,7 +7,7 @@
         <text wx:else bindtap="ziliao">{{ useInfo.nickName }}</text>
       </view>
     </view>
-    <view class="qiandao" bindtap="sign">{{ profileData.isSigned ? '已签到':'签到' }}</view>
+    <view class="qiandao" bindtap="sign">{{ profileData.isSigned ? '已签到':'💰签到' }}</view>
   </view>
   <view style="margin-top:20px">
     <mp-cells>

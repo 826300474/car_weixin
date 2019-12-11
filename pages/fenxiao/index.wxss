@@ -45,7 +45,7 @@
 .er .item{
   display: flex;
   justify-content: space-between;
-  padding: 20rpx 20rpx;
+  padding: 20rpx;
   border-bottom: solid 1px #EFEFEF;
 }
 .er .item .toux{

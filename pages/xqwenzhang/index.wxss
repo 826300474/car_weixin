@@ -31,7 +31,7 @@
 
 .er {
   padding: 24rpx;
-  font-size: 18px;
+  font-size: 44rpx;
   font-weight: bold;
 }
 
@@ -43,10 +43,11 @@
   left: 0;
   width: 100%;
   justify-content: space-between;
-  line-height: 44px;
+  line-height: 40px;
   border-top: 1px #f2f2f2 solid;
   background: #fff;
   font-size: 16px;
+  padding: 5px 0;
 }
 
 .si .left {
@@ -75,11 +76,15 @@
 
 .si .right {
   width: 285rpx;
+  margin-right: 5px;
   text-align: center;
+  border-radius: 4px;
 }
 
 .san {
   padding: 20rpx 20rpx 40rpx 20rpx;
+  margin-bottom: 50px;
+  color: #747474;
 }
 
 .san .buyTishi {

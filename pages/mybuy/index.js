@@ -27,12 +27,6 @@ Page({
   onReady: function () {
     this.commonList = this.selectComponent("#commonList")
   },
-  onReachBottom: function () {
-    this.commonList.getData("more")
-  },
-  onPullDownRefresh: function () {
-    this.commonList.getData("shuaxin")
-  },
   changNav: function (e) {
     if (e.target.id === "0") {
       this.setData({
@@ -49,15 +43,4 @@ Page({
     }
     this.commonList.getData("shuaxin")
   },
-  navClick: function (index) {
-    // let num = index.detail;
-    // let list = this.data.navList.map((item, index) => {
-    //   return { ...item,
-    //     state: index == num ? true : false
-    //   }
-    // })
-    // this.setData({
-    //   navList: list
-    // }, this.getData())
-  }
 })
