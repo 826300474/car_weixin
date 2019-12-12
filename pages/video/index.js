@@ -20,7 +20,7 @@ Page({
   },
   getCategories: function () {
     getCategories({
-      categoryId: '1'
+      categoryId: '2'
     }).then(data => {
       this.setData({
         navList: [...this.data.navList, ...data]

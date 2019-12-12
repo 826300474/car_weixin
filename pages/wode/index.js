@@ -1,6 +1,7 @@
 import {
   profile,
-  sign
+  sign,
+  nickAvatar
 } from '../../api/index.js'
 Page({
   data: {
@@ -32,9 +33,16 @@ Page({
     this.setData({
       useInfo: e.detail.userInfo
     })
+    // console.log(e.detail.userInfo )
     wx.setStorage({
       key: 'useInfo',
       data: e.detail.userInfo,
+    })
+    nickAvatar({
+      "avatarUrl": e.detail.userInfo.avatarUrl,
+      "nickname": e.detail.userInfo.nickName
+    }).then(data=>{
+      
     })
   },
   goto: function (e) {

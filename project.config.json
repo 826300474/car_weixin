@@ -55,29 +55,7 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": [
-				{
-					"id": 0,
-					"name": "pages/index/index",
-					"pathName": "pages/index/index",
-					"query": "invitedBy=123",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/index",
-					"pathName": "pages/index/index",
-					"query": "aaa=555",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "secce",
-					"pathName": "pages/index/index",
-					"query": "scene=555",
-					"scene": 1047
-				}
-			]
+			"list": []
 		}
 	}
 }

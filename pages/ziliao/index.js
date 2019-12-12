@@ -27,7 +27,6 @@ Page({
   },
   onLoad(options) {
     let that = this;
-    // options.code = 0
     this.setData({
       code: options.code
     })
@@ -130,7 +129,7 @@ Page({
             url: data.businessCertificate2
           })
         }
-        // data.customerState = 1
+        // data.customerState = 0
         this.setData({
           region: region,
           index: index,
@@ -153,7 +152,6 @@ Page({
     })
   },
   formSubmit: function(e) {
-
     if (e.detail.value.diqu.length === 0) {
       wx.showToast({
         title: '请选择地区',
@@ -161,7 +159,6 @@ Page({
       })
       return;
     }
-
     if (e.detail.value.hangye === "") {
       wx.showToast({
         icon: 'none',

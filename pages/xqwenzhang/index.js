@@ -38,6 +38,11 @@ Page({
       })
     })
   },
+  fenxiang: function () {
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+  },
   golike: function () {
     if (this.data.like) {
       unlike(this.data.myId).then(data => {

@@ -139,6 +139,14 @@ export function invitor(params) {
   })
 }
 
+export function nickAvatar(params) {
+  return request({
+    url: `/wx/member/nick-avatar`,
+    method: 'PUT',
+    params
+  })
+}
+
 export function allbytype(params) {
   return request({
     url: `/wx/dictionary/all-by-type`,

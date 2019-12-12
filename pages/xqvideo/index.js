@@ -67,6 +67,9 @@ Page({
       }
     })
   },
+  fenxiang:function(){
+    console.log(555)
+  },
   golike: function () {
     if (this.data.like) {
       unlike(this.data.myId).then(data => {

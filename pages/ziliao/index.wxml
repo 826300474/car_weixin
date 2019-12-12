@@ -27,7 +27,7 @@
     </view>
   </view>
 
-  <form bindsubmit="{{ code===''?formSubmit:'' }}">
+  <form bindsubmit="formSubmit">
     <view class="title">
       <text>地区/行业</text>
     </view>
@@ -83,7 +83,7 @@
       </view>
     </view>
     <view class="btn_box" wx:if="{{ shenData.customerState === 0 }}">
-      <button disabled="{{ shenData.customerState !== 0 }}" bindgetphonenumber="getPhoneNumber" formType="submit" open-type="{{ shenData.customerState===0 ?'getPhoneNumber' : '' }}" type="def" loading="{{ loading }}" type="{{ shenData.customerState === '0' ? 'primary' : 'default' }}">{{ codeName[shenData.customerState] }}</button>
+      <button bindgetphonenumber="getPhoneNumber" formType="submit" open-type="getPhoneNumber" type="def" loading="{{ loading }}" type="primary">提交审核</button>
     </view>
   </form>
 </view>

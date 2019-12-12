@@ -39,7 +39,16 @@ Component({
         })
       }
     })
-    this.getData("shuaxin")
+
+    try {
+      var value = wx.getStorageSync('openId')
+      if (value) {
+        this.getData("shuaxin")
+      }
+    } catch (e) {
+      
+    }
+
   },
   detached: function () {
     ctx.destroy()

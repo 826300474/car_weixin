@@ -55,6 +55,10 @@
   margin-right: 23rpx;
 }
 
+.si .left button{
+  color: #666;
+}
+
 .si .left view{
   display: flex;
   align-items: center;

@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/xqwenzhang/index",
     "pages/fenxiao/index",
-    
     "pages/wode/index",
     "pages/video/index",
     "pages/shequ/index",
@@ -10,8 +10,7 @@
     "pages/fenxiaoSheng/index",
     "pages/ziliao/index",
     "pages/xqvideo/index",
-    "pages/msg/index",
-    "pages/xqwenzhang/index"
+    "pages/msg/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
