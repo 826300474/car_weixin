@@ -1,10 +1,13 @@
 <view>
   <view class="yi">
-    <view>
-      <image class="toux" src="{{ useInfo ? useInfo.avatarUrl : '/assets/头像.png' }}" bindtap="ziliao"></image>
+    <view class="box">
+      <image class="toux" src="{{ (profileData.customerState < 1 || !useInfo)  ? '/assets/头像.png'  :profileData.avatarUrl}}" bindtap="ziliao"></image>
       <view>
-        <button wx:if="{{ !useInfo }}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">授权登录</button>
-        <text wx:else bindtap="ziliao">{{ useInfo.nickName }}</text>
+        <button wx:if="{{ profileData.customerState < 1 || !useInfo  }}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">授权登录</button>
+        <view wx:else bindtap="ziliao" class="xinxi">
+          <text>{{ profileData.nickname }}</text>
+          <text>积分：{{ profileData.points }}</text>
+        </view>
       </view>
     </view>
     <view class="qiandao" bindtap="sign">{{ profileData.isSigned ? '已签到':'💰签到' }}</view>
@@ -29,4 +32,5 @@
       </mp-cell>
     </mp-cells>
   </view>
+  <view class="work">由 远鲸科技 提供技术支持</view>
 </view>

@@ -3,7 +3,6 @@
   padding: 20rpx;
   padding-bottom: 0;
   background: #fff;
-  /* border-bottom: solid 1rpx red; */
   box-sizing: border-box;
 }
 
@@ -30,26 +29,28 @@
 
 .yi .title {
   line-height: 60rpx;
-}
-
-.yi .title text {
-  font-size: 30rpx;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
+.yi .title text {
+  font-size: 34rpx;
+}
+
 .san .title {
   line-height: 80rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .san .title text {
-  font-size: 36rpx;
+  font-size: 34rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
-/* .title {
-  font-size: 14px;
-} */
 
 .er {
   display: flex;
@@ -73,7 +74,7 @@
 }
 
 .er .title text {
-  font-size: 30rpx;
+  font-size: 34rpx;
 }
 
 .er .right {

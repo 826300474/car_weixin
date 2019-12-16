@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/video/index",
+    "pages/wode/index",
     "pages/index/index",
     "pages/xqwenzhang/index",
     "pages/fenxiao/index",
-    "pages/wode/index",
-    "pages/video/index",
     "pages/shequ/index",
     "pages/mybuy/index",
     "pages/fenxiaoSheng/index",
@@ -20,8 +20,10 @@
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
+    "borderStyle":"white",
     "selectedColor": "#000000",
     "color": "#AFAFB7",
+    "backgroundColor":"#f9f9f9",
     "list": [
       {
         "pagePath": "pages/index/index",

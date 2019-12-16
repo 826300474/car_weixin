@@ -6,7 +6,7 @@
   justify-content: space-between;
   line-height: 50rpx;
 }
-.yi view:first-child{
+.yi .box{
   display: flex;
   align-items: center;
 }
@@ -29,4 +29,16 @@
 }
 .yi button{
   line-height: 36px;
+}
+.yi .xinxi{
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-start;
+  align-items:flex-start;
+}
+.work{
+  text-align: center;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  color: #D9D9D9;
 }

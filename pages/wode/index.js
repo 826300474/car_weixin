@@ -8,13 +8,25 @@ Page({
     useInfo: "",
     profileData: "",
   },
+  onShow: function () {
+    this.getData();
+  },
   onLoad: function (options) {
     this.getData();
   },
   sign: function () {
     if (!this.data.profileData.isSigned) {
       sign().then(data => {
+        wx.showToast({
+          icon: 'none',
+          title: '每日签到积分+1，积分可换购',
+        })
         this.getData();
+      })
+    } else {
+      wx.showToast({
+        icon: 'none',
+        title: '当前积分' + this.data.profileData.points,
       })
     }
   },
@@ -33,7 +45,6 @@ Page({
     this.setData({
       useInfo: e.detail.userInfo
     })
-    // console.log(e.detail.userInfo )
     wx.setStorage({
       key: 'useInfo',
       data: e.detail.userInfo,
@@ -41,8 +52,19 @@ Page({
     nickAvatar({
       "avatarUrl": e.detail.userInfo.avatarUrl,
       "nickname": e.detail.userInfo.nickName
-    }).then(data=>{
-      
+    }).then(data => {
+
+    })
+
+    profile().then(data => {
+      this.setData({
+        profileData: data
+      })
+      if (Number(data.customerState) === 0) {
+        wx.navigateTo({
+          url: '/pages/ziliao/index',
+        })
+      }
     })
   },
   goto: function (e) {
@@ -51,9 +73,25 @@ Page({
     })
   },
   ziliao: function () {
-    wx.navigateTo({
-      url: '/pages/ziliao/index?code=' + this.data.profileData.invitorState
-    })
+    let customerState = Number(this.data.profileData.customerState);
+    console.log(this.data.profileData.customerState)
+    if (customerState === 0) {
+      wx.navigateTo({
+        url: '/pages/ziliao/index?code=' + this.data.profileData.invitorState
+      })
+    } else if (customerState === 1) {
+      wx.showToast({
+        title: '资料审核中，请耐心等待',
+      })
+    } else if (customerState === 2) {
+      wx.navigateTo({
+        url: '/pages/ziliao/index?code=' + this.data.profileData.invitorState
+      })
+    } else if (customerState === -1) {
+      wx.showToast({
+        title: '资料审核失败',
+      })
+    }
   },
   fenxiao: function () {
     wx.navigateTo({

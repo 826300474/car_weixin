@@ -41,6 +41,6 @@
         <button open-type="share" type="text">分享</button>
       </view>
     </view>
-    <view wx:if="{{content.isCharge === 1 && is_buy===0}}" bindtap="buy" class="right" style="background: #FCE718">{{ content.price + " 购买" }}</view>
+    <button wx:if="{{content.isCharge === 1 && is_buy===0}}" bindgetuserinfo="onGotUserInfo" bindtap="{{ useInfo ? 'buy':''  }}" open-type="{{ useInfo ? '':'getUserInfo' }}" class="right" type="text" style="background: #FCE718!important">{{ content.price + "元 购买" }}</button>
   </view>
 </view>

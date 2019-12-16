@@ -1,7 +1,7 @@
 <view class="item" bindtap="goto">
   <view wx:if="{{ propData.picsArray.length>1 && propData.type === 1}}" class="yi">
-    <view class="text_two title">
-      <text>{{ propData.title }}</text>
+    <view class="title">
+      <text>{{ propData.title  }}</text>
     </view>
     <view class="photo_box">
       <view class="photo" wx:for="{{ propData.picsArray }}" wx:key="{{idx}}" wx:for-index="idx">
@@ -16,7 +16,7 @@
 
   <view wx:if="{{ (propData.picsArray.length <= 1 || !propData.picsArray) && propData.type === 1 }}" class="er">
     <view class="left">
-      <view class="title text_two">
+      <view class="title ">
         {{ propData.title }}
       </view>
       <view class="bottom_box">
@@ -31,7 +31,7 @@
   </view>
 
   <view wx:if="{{ propData.type === 2 }}" class="san">
-    <view class="text_two title">
+    <view class="title">
       <text>{{ propData.title  }}</text>
     </view>
     <view class="photo_box">

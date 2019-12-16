@@ -47,7 +47,7 @@
   border-top: 1px #f2f2f2 solid;
   background: #fff;
   font-size: 16px;
-  padding: 5px 0;
+  padding: 5px;
 }
 
 .si .left {
@@ -79,10 +79,11 @@
 }
 
 .si .right {
+  display: block;
   width: 285rpx;
-  margin-right: 5px;
   text-align: center;
-  border-radius: 4px;
+  border-radius: 4rpx!important;
+  background: #FCE718;
 }
 
 .san {

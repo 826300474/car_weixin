@@ -2,7 +2,9 @@ import {
   getXq,
   like,
   unlike,
-  createOrders
+  createOrders,
+  profile,
+  nickAvatar
 } from '../../api/index.js'
 Page({
   data: {
@@ -16,8 +18,13 @@ Page({
     listParam: {
       type: 1
     },
+    useInfo: '',
   },
   onLoad: function (options) {
+    let useInfo = wx.getStorageSync("useInfo")
+    this.setData({
+      useInfo: useInfo,
+    })
     if (options.id) {
       this.setData({
         myId: options.id
@@ -39,6 +46,21 @@ Page({
       }
     }
   },
+  onGotUserInfo: function (e) {
+    this.setData({
+      useInfo: e.detail.userInfo
+    })
+    wx.setStorage({
+      key: 'useInfo',
+      data: e.detail.userInfo,
+    })
+    nickAvatar({
+      "avatarUrl": e.detail.userInfo.avatarUrl,
+      "nickname": e.detail.userInfo.nickName
+    }).then(data => {
+      this.buy()
+    })
+  },
   getData: function (tag) {
     wx.showLoading({
       title: '加载中...',
@@ -53,9 +75,9 @@ Page({
           content: data.article,
           like: data.like,
           is_buy: data.is_buy,
-          playState:true
+          playState: true
         })
-        
+
       } else {
         this.setData({
           videoUrl: data.article.videoUrl,
@@ -67,8 +89,8 @@ Page({
       }
     })
   },
-  fenxiang:function(){
-    console.log(555)
+  fenxiang: function () {
+    
   },
   golike: function () {
     if (this.data.like) {
@@ -88,6 +110,34 @@ Page({
     }
   },
   buy: function () {
+    profile().then(data => {
+      let customerState = Number(data.customerState);
+      if (customerState === 0) {
+        wx.showModal({
+          content: '请先提交个人资料',
+          showCancel: false,
+          success(res) {
+            if (res.confirm) {
+              wx.navigateTo({
+                url: '/pages/ziliao/index',
+              })
+            }
+          }
+        })
+      } else if (customerState === 1) {
+        wx.showToast({
+          title: '资料审核中，请耐心等待',
+        })
+      } else if (customerState === 2) {
+        this.buy_next()
+      } else if (customerState === -1) {
+        wx.showToast({
+          title: '资料审核失败，无法购买',
+        })
+      }
+    })
+  },
+  buy_next: function () {
     var that = this;
     if (this.data.is_buy === 0) {
       createOrders({
@@ -101,10 +151,6 @@ Page({
           paySign: data.paySign,
           success(res) {
             that.getData('pay')
-            // that.setData({
-            //   playState: true
-            // })
-            // that.videoContext.play()
           },
           fail(res) {
             wx.showToast({
