@@ -10,7 +10,7 @@
             <text>{{ data.childrenCount || 0 }}</text>
           </view>
           <view>
-            <text>总购买金额</text>
+            <text>总收益金额</text>
             <text>{{ data.sum || 0 }}</text>
           </view>
         </view>

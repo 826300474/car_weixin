@@ -1,7 +1,7 @@
 //app.js
 App({
   onLaunch: function (options) {
-    console.log(options )
+    console.log('erweima_index', options)
   },  
   globalData: {
     userInfo: null

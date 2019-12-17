@@ -12,7 +12,7 @@ Page({
     behavior:[]
   },
   onLoad: function (options) {
-    console.log(options)
+    console.log('erweima_index', options)
     // if (options.scene) {
     //   let scene = decodeURIComponent(options.scene);
     //   console.log(scene )
