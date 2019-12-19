@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/video/index",
     "pages/wode/index",
-    "pages/index/index",
     "pages/xqwenzhang/index",
     "pages/fenxiao/index",
     "pages/shequ/index",
