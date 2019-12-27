@@ -11,7 +11,8 @@
     <rich-text nodes="{{(content.isCharge === 0 || is_buy === 1) ? content.content : content.contentFree}}"></rich-text>
     <view class="buyTishi" wx:if="{{ content.isCharge === 1 && is_buy === 0 }}">购买查看全部内容</view>
   </view>
-  <view class="si">
+      <pay-bottom member="{{member}}" bind:getData="getData" bind:upDataFromSon="upDataFromSon" myId="{{ myId }}" content="{{ content }}" like="{{ like }}" is_buy="{{ is_buy }}"/>
+  <!-- <view class="si">
     <view class="left">
       <view wx:if="{{ like }}" bindtap="golike">
         <image src="../../assets/hearted.png"></image>
@@ -27,7 +28,7 @@
       </view>
     </view>
     <button wx:if="{{content.isCharge === 1 && is_buy===0}}" bindgetuserinfo="onGotUserInfo" bindtap="{{ useInfo ? 'buy':''  }}" open-type="{{ useInfo ? '':'getUserInfo' }}" class="right" type="text" style="background: #FCE718!important">{{ content.price + "元 购买" }}</button>
-  </view>
+  </view> -->
   <!-- <view class="wu" wx:if="{{ recommend.length > 0 }}">
     <view class="title">相关推荐</view>
     <common-list id="commonList" prop-type="recommend" prop-param="{{ listParam }}" prop-data="{{ recommend }}" />

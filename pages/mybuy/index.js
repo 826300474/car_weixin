@@ -9,9 +9,11 @@ Page({
     activeIndex: 0,
     list: [],
     pageNow: 0,
-    pageSize: 5
+    pageSize: 5,
+    isCheck:0
   },
   onLoad: function (options) {
+    let that = this;
     if (options.type === 'love') {
       wx.setNavigationBarTitle({
         title: '我的收藏'
@@ -23,6 +25,15 @@ Page({
       })
       this.setData({ api: { data: orderList }, name: 'order'})
     }
+    wx.getStorage({
+      key: 'config',
+      success: function (res) {
+        // res.data.isCheck = 1;
+        that.setData({
+          isCheck: res.data.isCheck
+        })
+      },
+    })
   },
   onReady: function () {
     this.commonList = this.selectComponent("#commonList")

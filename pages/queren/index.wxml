@@ -1,0 +1,44 @@
+<view>
+  <view class="yi item" bindtap="address">
+    <image src="/assets/地址.png"></image>
+    <view wx:if="{{address}}">
+      <view>
+        <text style="margin-right:20rpx;color:#000;">{{ address.userName }}</text>
+        <text style="color:#000;">{{ address.telNumber }}</text>
+      </view>
+      <view>
+        <text>{{ address.provinceName + address.cityName +  address.countyName + address.detailInfo}}</text>
+      </view>
+    </view>
+    <view wx:else>
+      <text>请选择地址</text>
+    </view>
+    <mp-icon icon="arrow" color="black" size="{{15}}" class="back"></mp-icon>
+  </view>
+  <view class="er item">
+    <view class="left">
+      <image src="{{ content.topImg }}" mode="aspectFill"></image>
+    </view>
+    <view class="right">
+      <view>
+        <text>{{ content.title }}</text>
+      </view>
+      <view>
+        <text>{{ content.priceDiscount }}</text>
+        <text>×{{ number }}</text>
+      </view>
+    </view>
+  </view>
+  <view class="san item">
+    <text>优惠券</text>
+    <text style="color:#666;">暂无优惠卷</text>
+  </view>
+  <view class="san item">
+    <text>合计金额</text>
+    <text style="color:red;">¥{{ content.priceDiscount*number }}</text>
+  </view>
+  <view class="bottom_box">
+    <button type="primary" bindtap="toBug">付款</button>
+  </view>
+</view>
+<actionSheet bindactiontap="buy_next" show="{{pay_type}}" actions="{{groups}}" title="请选择付款方式" />

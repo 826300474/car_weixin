@@ -1,0 +1,37 @@
+<view class="si">
+  <view class="left">
+    <view wx:if="{{ like }}" bindtap="golike">
+      <image src="../../assets/hearted.png"></image>
+      <text>已收藏</text>
+    </view>
+    <view wx:else bindtap="golike">
+      <image src="../../assets/heart.png"></image>
+      <text>收藏</text>
+    </view>
+    <view>
+      <image src="../../assets/分享.png"></image>
+      <button open-type="share" type="text">分享</button>
+    </view>
+  </view>
+  <button wx:if="{{content.isCharge === 1 && is_buy===0 && content.type!==3}}" bindgetuserinfo="onGotUserInfo" bindtap="{{ useInfo ? 'buy':''  }}" open-type="{{ useInfo ? '':'getUserInfo' }}" class="right" type="text" style="background: #FCE718!important">{{ content.priceDiscount + "元 购买(VIP折"+ content.discount + "%)"}}
+  </button>
+  <button wx:if="{{content.type===3}}" bindgetuserinfo="onGotUserInfo" bindtap="{{ useInfo ? 'buy':''  }}" open-type="{{ useInfo ? '':'getUserInfo' }}" class="right" type="text" style="background: #FCE718!important">{{ content.priceDiscount + "元 购买(VIP折"+ content.discount + "%)"}}
+  </button>
+</view>
+<actionSheet bindactiontap="buy_next" show="{{pay_type}}" actions="{{groups}}" title="请选择付款方式" />
+<halfScreenDialog bindbuttontap="buttontap" show="{{queren_type}}" maskClosable="{{false}}">
+  <view class="queren_box">
+    <view>{{ content.title }}</view>
+    <view class="price">{{ content.priceDiscount }}</view>
+    <view class="number_box">
+      <view>购买数量</view>
+      <view class="btn">
+        <text class="icon" id="1" bindtap="setNumber">-</text>
+        <text>{{ number }}</text>
+        <text class="icon" id="2" bindtap="setNumber">+</text>
+      </view>
+    </view>
+    <button type="primary" bindtap="toBuy">确认</button>
+  </view>
+
+</halfScreenDialog>

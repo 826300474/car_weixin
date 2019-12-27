@@ -1,8 +1,9 @@
 <view>
   <view class="top_box">
     <view id="0" class="{{ activeIndex===0 ? 'active':'' }}" bindtap="changNav">全部</view>
-    <view id="2" class="{{ activeIndex===2 ? 'active':'' }}" bindtap="changNav">视频</view>
+    <view id="2" wx:if="{{ isCheck === 0 }}" class="{{ activeIndex===2 ? 'active':'' }}" bindtap="changNav">视频</view>
     <view id="1" class="{{ activeIndex===1 ? 'active':'' }}" bindtap="changNav">社交</view>
+    <view id="3" class="{{ activeIndex===3 ? 'active':'' }}" bindtap="changNav">产品</view>
   </view>
   <view class="list_box">
         <common-list id="commonList" prop-aaa="{{ api }}" prop-param="{{ listParam }}" prop-id="{{ name }}"/>

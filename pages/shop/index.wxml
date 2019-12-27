@@ -1,0 +1,21 @@
+<image src="/assets/分类顶部位图.png" class="top_img"></image>
+<view class="page">
+  <view class="left">
+    <scroll-view scroll-y>
+      <view bindtap="navgo" id="{{ item.id }}" class="{{ item.id === activeId ? 'active':'' }}" wx:for="{{ nav_list }}" wx:key="{{ item.id }}">{{ item.categoryName }}</view>
+    </scroll-view>
+  </view>
+  <view class="right">
+    <recycle-view batch="{{batchSetRecycleData}}" id="recycleIdShop" bindscrolltolower="getData">
+      <recycle-item wx:for="{{recycleList}}" wx:key="id">
+        <view class="row">
+          <view class="item" wx:for="{{ item }}" bindtap="goto" id="{{ item.id }}">
+            <image src="{{ item.topImg }}" mode="aspectFill"></image>
+            <view class="name text_two">{{ item.title }}</view>
+            <view class="price">¥{{ item.price }}</view>
+          </view>
+        </view>
+      </recycle-item>
+    </recycle-view>
+  </view>
+</view>

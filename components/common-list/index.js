@@ -26,7 +26,7 @@ Component({
   },
   data: {
     pageNum: 1,
-    pageSize: 5,
+    pageSize: 8,
     height: null,
     emptyState: false
   },
@@ -48,7 +48,6 @@ Component({
     } catch (e) {
       
     }
-
   },
   detached: function () {
     ctx.destroy()
@@ -56,14 +55,20 @@ Component({
   methods: {
     itemSizeFunc: function (item, idx) {
       let width, height;
-      if (item.type === 1) {
+      if (item.type === 1 ) {
         if (item.picsArray && item.picsArray.length > 2) {
           height = ctx.transformRpx(280)
         } else {
           height = ctx.transformRpx(170)
         }
-      } else {
+      } else if (item.type === 2 ) {
         height = ctx.transformRpx(435)
+      } else if (item.type === 3) {
+        if (item.topImgsJson && item.topImgsJson.length > 2) {
+          height = ctx.transformRpx(280)
+        } else {
+          height = ctx.transformRpx(170)
+        }
       }
       return {
         width: ctx.transformRpx(750),

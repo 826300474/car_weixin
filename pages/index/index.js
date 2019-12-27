@@ -1,17 +1,19 @@
 const app = getApp()
 import {
-  getBanner, getBehavior
+  getBanner,
+  getBehavior,
+  config
 } from '../../api/index.js'
-import { openLogin } from "../../utils/util.js"
+import {
+  openLogin
+} from "../../utils/util.js"
 Page({
   data: {
-    listParam:{
-      type:1  
-    },
+    listParam: "",
     banner: [],
-    behavior:[]
+    behavior: []
   },
-  onLoad: function (options) {
+  onLoad: function(options) {
     console.log('erweima_index', options)
     // if (options.scene) {
     //   let scene = decodeURIComponent(options.scene);
@@ -24,9 +26,11 @@ Page({
         openLogin().then(data => {
           this.getBanner()
           this.getBehavior()
+          this.getConfig()
           this.commonList.getData("shuaxin")
         })
-      }else{
+      } else {
+        this.getConfig()
         this.getBanner()
         this.getBehavior()
       }
@@ -34,34 +38,46 @@ Page({
 
     }
   },
-  getBanner:function(){
-    getBanner().then(data=>{
+  getBanner: function() {
+    getBanner().then(data => {
       this.setData({
-        banner:data
+        banner: data
       })
     })
   },
-  getBehavior:function(){
-    getBehavior().then(data=>{
+  getBehavior: function() {
+    getBehavior().then(data => {
       this.setData({
         behavior: data
       })
     })
   },
-  goto:function(e){
+  getConfig: function() {
+    config().then(data=>{
+      wx.setStorage({
+        key: 'config',
+        data: data,
+      })
+    })
+  },
+  goto: function(e) {
     let index = Number(e.currentTarget.id)
     let data = this.data.banner[index]
     if (data.type === 1) {
       wx.navigateTo({
-        url: '/pages/xqwenzhang/index?id=' + data.id,
+        url: '/pages/xqwenzhang/index?id=' + data.targetId,
       })
-    } else {
+    } else if (data.type === 2) {
       wx.navigateTo({
-        url: '/pages/xqvideo/index?id=' + data.id,
+        url: '/pages/xqvideo/index?id=' + data.targetId,
+      })
+    } else if (data.type === 3) {
+      wx.navigateTo({
+        url: '/pages/xqshop/index?id=' + data.targetId,
       })
     }
   },
-  onReady:function(){
+  onReady: function() {
     this.commonList = this.selectComponent("#commonList")
   },
 })

@@ -1,8 +1,8 @@
+
 .scroll-view {
   width: 100%;
   white-space: nowrap;
   height: 40px;
-  /* border-bottom: solid 1px #f2f2f2; */
 }
 .scroll-view .item {
   line-height: 26px;

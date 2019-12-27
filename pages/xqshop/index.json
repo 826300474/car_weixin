@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "pay-bottom": "/components/pay-bottom/index"
+  },
+  "navigationBarTitleText": "产品详情"
+}

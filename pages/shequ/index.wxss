@@ -1,14 +1,33 @@
-.top_box{
+.nav_box{
   position: fixed;
   width: 100%;
   left: 0;
-  top: 0;
+  top: 40px;
   background: #fff;
   z-index: 1000;
+  border-bottom: solid 1px #f2f2f2;
+}
+.top_box{
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  left: 0;
+  background: #fff;
+  height: 40px;
+  line-height: 40px;
+  display: flex;
+  justify-content:space-around;
+  border-bottom: solid 1px #f2f2f2;
+}
+.top_box view{
+  padding: 0 20rpx;
+}
+.top_box .active{
+ border-bottom: 2px solid #FCD055;
 }
 .list_box{
   position: fixed;
-  top: 40px;
+  top: 80px;
   left: 0;
   bottom: 0;
   right: 0; 

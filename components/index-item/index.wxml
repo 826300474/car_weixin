@@ -1,5 +1,5 @@
 <view class="item" bindtap="goto">
-  <view wx:if="{{ propData.picsArray.length>1 && propData.type === 1}}" class="yi">
+  <view wx:if="{{ propData.picsArray.length>2 && propData.type === 1}}" class="yi">
     <view class="title">
       <text>{{ propData.title  }}</text>
     </view>
@@ -10,18 +10,18 @@
     </view>
     <view class="bottom_box" style="margin-top: 10rpx;">
       <view>{{ propData.viewCount }}次查看</view>
-      <view style="background: {{ propData.isCharge === 0 ? '#e5e5e5' : '#FCE718'}}">{{ propData.isCharge === 0 ? "免费" : "付费" }}</view>
+      <view style="background:#e5e5e5" wx:if="{{ propData.isCharge !== -1 }}">{{ propData.isCharge === 0 ? "免费" : "付费" }}</view>
     </view>
   </view>
 
-  <view wx:if="{{ (propData.picsArray.length <= 1 || !propData.picsArray) && propData.type === 1 }}" class="er">
+  <view wx:if="{{ (propData.picsArray.length <= 2 || !propData.picsArray) && propData.type === 1 }}" class="er">
     <view class="left">
       <view class="title ">
         {{ propData.title }}
       </view>
       <view class="bottom_box">
-        <view>{{ propData.viewCount }}次查看</view>
-        <view style="background: {{ propData.isCharge === 0 ? '#e5e5e5' : '#FCE718'}}">{{ propData.isCharge === 0 ? "免费" : "付费" }}</view>
+        <view>{{ propData.viewCount }}次查看yy</view>
+        <view style="background:#e5e5e5" wx:if="{{ propData.isCharge !== -1 }}">{{ propData.isCharge === 0 ? "免费" : "付费" }}</view>
       </view>
     </view>
 
@@ -42,6 +42,38 @@
       <view class="zhezao"></view>
       <image class="play" src="../../assets/播放.png"></image>
       <image class="img" src="{{ propData.videoPic }}" mode="aspectFill" lazy-load="true"></image>
+    </view>
+  </view>
+
+  <view>
+    <view wx:if="{{ propData.topImgsJson.length > 2 && propData.type === 3}}" class="yi">
+      <view class="title">
+        <text>{{ propData.title  }}</text>
+      </view>
+      <view class="photo_box">
+        <view class="photo" wx:for="{{ propData.topImgsJson }}" wx:key="{{idx}}" wx:for-index="idx">
+          <image class="img" src="{{ item }}" mode="aspectFill" lazy-load="true"></image>
+        </view>
+      </view>
+      <view class="bottom_box" style="margin-top: 10rpx;">
+        <view>{{ propData.viewCount }}次查看</view>
+        <view style="background:#FCE718}}">产品</view>
+      </view>
+    </view>
+    <view wx:if="{{ (propData.topImgsJson.length <=2 || !propData.topImgsJson ) && propData.type === 3  }}" class="er">
+      <view class="left">
+        <view class="title ">
+          {{ propData.title }}
+        </view>
+        <view class="bottom_box">
+          <view>{{ propData.viewCount }}次查看</view>
+          <view style="background:#FCE718}}">产品</view>
+        </view>
+      </view>
+
+      <view class="right">
+        <image class="img" src="{{ propData.topImg  }}" mode="aspectFill" lazy-load="true"></image>
+      </view>
     </view>
   </view>
 </view>

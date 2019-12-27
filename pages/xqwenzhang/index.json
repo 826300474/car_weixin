@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "pay-bottom": "/components/pay-bottom/index",
     "common-list": "/components/common-list1/index"
   },
   "navigationBarTitleText": "文章详情"

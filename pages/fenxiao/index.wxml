@@ -16,6 +16,7 @@
         </view>
       </view>
     </view>
+    <view class="empty" wx:if="{{ list.length === 0 }}">暂无战绩，加油吧</view>
     <view class="er">
       <recycle-item wx:for="{{recycleList}}" wx:key="id">
         <view class="item">
@@ -37,15 +38,5 @@
         </view>
       </recycle-item>
     </view>
-
   </recycle-view>
-
-
-  <!-- <view class="er">
-    <view class="title">我的战绩</view>
-    <view wx:if="{{ list.length }}">
-      
-    </view>
-    <view class="empty" wx:else>暂无战绩，加油吧</view>
-  </view> -->
 </view>

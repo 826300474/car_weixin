@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "halfScreenDialog": "../weui-miniprogram/half-screen-dialog/half-screen-dialog",
+    "actionSheet": "../weui-miniprogram/actionsheet/actionsheet"
+  }
+}

@@ -1,16 +1,20 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/shop/index",
+    "pages/queren/index",
+    "pages/xqshop/index",
+    "pages/xqwenzhang/index",
+    "pages/shequ/index",
     "pages/video/index",
     "pages/wode/index",
-    "pages/xqwenzhang/index",
     "pages/fenxiao/index",
-    "pages/shequ/index",
     "pages/mybuy/index",
     "pages/fenxiaoSheng/index",
     "pages/ziliao/index",
     "pages/xqvideo/index",
     "pages/msg/index"
+    
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
@@ -20,10 +24,10 @@
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
-    "borderStyle":"white",
+    "borderStyle": "white",
     "selectedColor": "#000000",
     "color": "#AFAFB7",
-    "backgroundColor":"#f9f9f9",
+    "backgroundColor": "#f9f9f9",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -34,14 +38,14 @@
       {
         "pagePath": "pages/shequ/index",
         "text": "社区",
-        "iconPath": "assets/Post_Line.png",
-        "selectedIconPath": "assets/Post.png"
-      },
-      {
-        "pagePath": "pages/video/index",
-        "text": "视频",
         "iconPath": "assets/Video_Line.png",
         "selectedIconPath": "assets/Video.png"
+      },
+      {
+        "pagePath": "pages/shop/index",
+        "text": "产品",
+        "iconPath": "assets/Post_Line.png",
+        "selectedIconPath": "assets/Post.png"
       },
       {
         "pagePath": "pages/wode/index",

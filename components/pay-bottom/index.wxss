@@ -1,0 +1,89 @@
+.si {
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  justify-content: space-between;
+  line-height: 40px;
+  border-top: 1px #f2f2f2 solid;
+  background: #fff;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.si .left {
+  flex-grow: 1;
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.si .left image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 23rpx;
+}
+
+.si .left button {
+  color: #666;
+}
+
+.si .left view {
+  display: flex;
+  align-items: center;
+  color: #666;
+}
+
+.si .left text {
+  font-size: 16px;
+}
+
+.si .right {
+  display: block;
+  padding: 0 20rpx !important;
+  text-align: center;
+  border-radius: 4rpx !important;
+  background: #fce718;
+}
+
+.queren_box .price {
+  text-align: center;
+  font-size: 48rpx;
+  color: #c8262c;
+  border-bottom: solid 1px #f2f2f2;
+  padding-bottom: 30rpx;
+}
+
+.queren_box button {
+  /* margin-top: 30rpx; */
+  margin-bottom: 30rpx;
+}
+
+.queren_box  .number_box {
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.queren_box  .number_box .btn {
+  border: solid 1px #808080;
+  border-radius: 30rpx;
+  display: flex;
+  overflow: hidden;
+}
+.queren_box  .number_box .btn text{
+  padding: 0 30rpx;
+  line-height: 60rpx;
+}
+.queren_box  .number_box .btn text:first-child{
+  border-right: solid 1px #808080;
+}
+.queren_box  .number_box .btn text:last-child{
+  border-left: solid 1px #808080;
+}
+.queren_box  .number_box .btn .icon:active{
+  background: #e5e5e5;
+}

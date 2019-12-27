@@ -1,0 +1,128 @@
+.yi, .er, .san {
+  background: #fff;
+}
+
+swiper{
+  height: 438rpx;
+}
+.yi image{
+  width: 100%;
+  height: 100%;
+}
+.er {
+  padding: 24rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  border-bottom: 1px solid #D9D9D9;
+}
+
+.er .box{
+  display: flex;
+  align-items: center;
+}
+
+.er .title{
+  font-size: 36rpx;
+}
+
+.er .fuhao{
+  color: #C8262C;
+  font-size: 30rpx;
+  margin-right: 10rpx;
+}
+
+.er .priceDiscount{
+  color: #C8262C;
+  font-size: 50rpx;
+  margin-right: 20px;
+}
+.er .price{
+  color:#9B9B9B;
+  font-size: 40rpx;
+  text-decoration: line-through;
+}
+
+.si {
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  justify-content: space-between;
+  line-height: 40px;
+  border-top: 1px #f2f2f2 solid;
+  background: #fff;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.si .left {
+  flex-grow: 1;
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.si .left image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 23rpx;
+}
+
+.si .left button{
+  color: #666;
+}
+
+.si .left view {
+  display: flex;
+  align-items: center;
+  color: #666;
+}
+
+.si .left text {
+  font-size: 16px;
+}
+
+.si .right {
+  display: block;
+  width: 285rpx;
+  text-align: center;
+  border-radius: 4rpx!important;
+  background: #FCE718;
+}
+
+.san {
+  padding: 20rpx 20rpx 40rpx 20rpx;
+  margin-bottom: 50px;
+  color: #747474;
+  margin-top: 20rpx;
+  border-top: 1px solid #D9D9D9;
+}
+.san .title{
+  text-align: center;
+  color: #C8262C;
+  line-height: 54rpx;
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+}
+
+.san .buyTishi {
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.wu {
+  padding-bottom: 44px;
+  margin-top: 5px;
+}
+
+.wu .title {
+  padding: 20rpx;
+  font-size: 18px;
+  background: #fff;
+  padding-bottom: 0;
+}

@@ -35,6 +35,9 @@ Page({
   onReady: function (res) {
     this.videoContext = wx.createVideoContext('myVideo')
   },
+  upDataFromSon: function (data) {
+    this.setData(data.detail);
+  },
   timeupdate: function (e) {
     if (this.data.content.isCharge === 1 && this.data.is_buy === 0) {
       if (e.detail.currentTime > this.data.content.minuteFree * 60) {
@@ -75,6 +78,7 @@ Page({
           content: data.article,
           like: data.like,
           is_buy: data.is_buy,
+          member: data.member,
           playState: true
         })
 
@@ -84,6 +88,7 @@ Page({
           content: data.article,
           like: data.like,
           is_buy: data.is_buy,
+          member: data.member,
           recommend: data.recommend,
         })
       }

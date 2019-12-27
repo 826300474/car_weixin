@@ -19,12 +19,9 @@ Page({
       page: this,
       itemSize: this.itemSizeFunc
     })
-    // ctx.append(newList)
-    // ctx.update(beginIndex, list)
-    // ctx.destroy()
   },
-  onReachBottom: function () {
-    console.log(555)
+  onUnload:function(){
+    ctx.destroy();
   },
   itemSizeFunc: function (item, idx) {
     return {
@@ -69,11 +66,15 @@ Page({
         if (res.statusCode === 200) {
           wx.saveImageToPhotosAlbum({
             filePath: res.tempFilePath,
-            success() {
+            success(res) {
+              console.log(res)
               wx.showToast({
                 title: '保存成功',
                 icon: 'none'
               })
+            },
+            fail(err){
+              console.log(err)
             }
           })
         }

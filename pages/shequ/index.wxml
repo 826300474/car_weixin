@@ -1,10 +1,13 @@
 <view class="allbBox">
-  <view class="top_box">
+  <view class="top_box" wx:if="{{ isCheck === 0 }}" >
+    <view id="2" class="{{ activeTab===2 ? 'active':'' }}" bindtap="changNav">视频</view>
+    <view id="1" class="{{ activeTab===1 ? 'active':'' }}" bindtap="changNav">社交</view>
+  </view>
+  <view class="nav_box" style="top:{{ isCheck === 0 ? '40px' : '0px' }}">
     <nav-scrol prop-type="{{ activeNav }}" prop-data="{{ navList }}" bind:navClick="navClick"></nav-scrol>
   </view>
-  <view class="list_box">
-    <common-list id="commonList" prop-param="{{ listParam }}" prop-id="shequ">
-      
+  <view class="list_box" style="top:{{ isCheck === 0 ? '80px' : '40px' }}">
+    <common-list id="commonList" prop-param="{{ listParam }}" prop-id="shequ" prop-height="{{ isCheck === 0 ? 80 : 40 }}">
     </common-list>
   </view>
 </view>

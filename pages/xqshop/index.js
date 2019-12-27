@@ -3,12 +3,12 @@ import {
 } from '../../api/index.js'
 Page({
   data: {
-    myId: "1",
+    myId: "",
     content: "",
     recommend: [],
-    is_buy:0,
+    is_buy: 0,
     like: null,
-    useInfo:''
+    useInfo: ''
   },
   onLoad: function (options) {
     let useInfo = wx.getStorageSync("useInfo")

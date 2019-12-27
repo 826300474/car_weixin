@@ -8,24 +8,21 @@ Component({
       type: Object
     },
   },
-  created: function() {
-    // console.log(this.data.propData)
-  },
-  data: {
-
-  },
   methods: {
-    goto: function() {
+    goto: function () {
       let data = this.data.propData;
-      // console.log(data)
-      // return;
+      console.log(data.type)
       if (data.type === 1) {
         wx.navigateTo({
           url: '/pages/xqwenzhang/index?id=' + (data.articleId ? data.articleId : data.id),
         })
-      } else {
+      } else if (data.type === 2) {
         wx.navigateTo({
           url: '/pages/xqvideo/index?id=' + (data.articleId ? data.articleId : data.id),
+        })
+      } else if (data.type === 3) {
+        wx.navigateTo({
+          url: '/pages/xqshop/index?id=' + (data.articleId ? data.articleId : data.id),
         })
       }
 

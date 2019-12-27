@@ -1,0 +1,24 @@
+<view>
+  <view class="yi">
+    <swiper indicator-dots autoplay circular>
+      <block wx:for="{{content.topImgsJson}}" wx:key="{{idx}}" wx:for-index="idx">
+        <swiper-item id="{{idx}}" bindtap="goto">
+          <image mode="aspectFill" src="{{ item }}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="er">
+    <view class="title">{{ content.title }}</view>
+    <view class="box">
+     <text class="fuhao">¥</text>
+      <text class="priceDiscount">{{ content.priceDiscount }}</text>
+      <text class="price">{{ content.price }}</text>
+    </view>
+  </view>
+  <view class="san">
+    <view class="title">· 产品介绍 ·</view>
+    <rich-text nodes="{{content.content}}"></rich-text>
+  </view>
+  <pay-bottom type="shop" member="{{member}}" bind:getData="getData" bind:upDataFromSon="upDataFromSon" myId="{{ myId }}" content="{{ content }}" like="{{ like }}" is_buy="{{ is_buy }}" />
+</view>

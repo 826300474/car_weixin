@@ -37,7 +37,7 @@
   text-align: center;
   padding: 40rpx 0 20rpx 0;
 }
-.er .empty{
+.empty{
   text-align: center;
   color: #666;
   padding: 100rpx;
