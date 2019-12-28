@@ -13,7 +13,7 @@
       <button open-type="share" type="text">分享</button>
     </view>
   </view>
-  <button wx:if="{{content.isCharge === 1 && is_buy===0 && content.type!==3}}" bindgetuserinfo="onGotUserInfo" bindtap="{{ useInfo ? 'buy':''  }}" open-type="{{ useInfo ? '':'getUserInfo' }}" class="right" type="text" style="background: #FCE718!important">{{ content.priceDiscount + "元 购买(VIP折"+ content.discount + "%)"}}
+  <button wx:if="{{content.isCharge === 1 && is_buy===0 && content.type!==3 }}" bindgetuserinfo="onGotUserInfo" bindtap="{{ useInfo ? 'buy':''  }}" open-type="{{ useInfo ? '':'getUserInfo' }}" class="right" type="text" style="background: #FCE718!important">{{ content.priceDiscount + "元 购买(VIP折"+ content.discount + "%)"}}
   </button>
   <button wx:if="{{content.type===3}}" bindgetuserinfo="onGotUserInfo" bindtap="{{ useInfo ? 'buy':''  }}" open-type="{{ useInfo ? '':'getUserInfo' }}" class="right" type="text" style="background: #FCE718!important">{{ content.priceDiscount + "元 购买(VIP折"+ content.discount + "%)"}}
   </button>
