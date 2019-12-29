@@ -64,7 +64,7 @@
 
 .er .title {
   margin: 10rpx 0 10rpx 0;
-  min-height: 110rpx;
+  min-height: 109rpx;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -150,8 +150,7 @@
   align-items: center;
 }
 
-.bottom_box view:last-child {
-  background: #fcd055;
+.bottom_box .bottom_right {
   border-radius: 20rpx;
   padding: 0rpx 10rpx;
   font-size: 16rpx;

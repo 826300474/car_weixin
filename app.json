@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/mybuy/index",
     "pages/shop/index",
     "pages/queren/index",
     "pages/xqshop/index",
@@ -9,12 +10,10 @@
     "pages/video/index",
     "pages/wode/index",
     "pages/fenxiao/index",
-    "pages/mybuy/index",
     "pages/fenxiaoSheng/index",
     "pages/ziliao/index",
     "pages/xqvideo/index",
     "pages/msg/index"
-    
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",

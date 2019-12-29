@@ -64,6 +64,7 @@ Page({
     if(!this.data.address){
       wx.showToast({
         title: '请选择地址',
+        icon:'none'
       })
       return;
     }
@@ -114,23 +115,23 @@ Page({
           signType: 'MD5',
           paySign: data.paySign,
           success(res) {
-            wx.showToast({
-              title: '支付成功',
-              icon: 'none'
-            })
-            // let param = {
-            //   type: 'success',
-            //   title: "付款成功",
-            //   desc: "",
-            //   handle: [{
-            //     type: "primary",
-            //     text: "返回首页",
-            //     tap: "./../index/index"
-            //   }],
-            // };
-            // wx.navigateTo({
-            //   url: './../msg/index?data=' + JSON.stringify(param),
+            // wx.showToast({
+            //   title: '支付成功',
+            //   icon: 'none'
             // })
+            let param = {
+              type: 'success',
+              title: "付款成功",
+              desc: "",
+              handle: [{
+                type: "primary",
+                text: "返回首页",
+                tap: "./../index/index"
+              }],
+            };
+            wx.navigateTo({
+              url: './../msg/index?data=' + JSON.stringify(param),
+            })
           },
           fail(res) {
             wx.showToast({
@@ -140,23 +141,23 @@ Page({
           }
         })
       } else {
-        wx.showToast({
-          title: '支付成功',
-          icon: 'none'
-        })
-        // let param = {
-        //   type: 'success',
-        //   title: "付款成功",
-        //   desc: "",
-        //   handle: [{
-        //     type: "primary",
-        //     text: "返回首页",
-        //     tap: "./../index/index"
-        //   }],
-        // };
-        // wx.navigateTo({
-        //   url: './../msg/index?data=' + JSON.stringify(param),
+        // wx.showToast({
+        //   title: '支付成功',
+        //   icon: 'none'
         // })
+        let param = {
+          type: 'success',
+          title: "付款成功",
+          desc: "",
+          handle: [{
+            type: "primary",
+            text: "返回首页",
+            tap: "./../index/index"
+          }],
+        };
+        wx.navigateTo({
+          url: './../msg/index?data=' + JSON.stringify(param),
+        })
       }
     })
   }

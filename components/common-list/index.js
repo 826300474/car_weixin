@@ -26,7 +26,7 @@ Component({
   },
   data: {
     pageNum: 1,
-    pageSize: 8,
+    pageSize: 6,
     height: null,
     emptyState: false
   },
@@ -39,7 +39,6 @@ Component({
         })
       }
     })
-
     try {
       var value = wx.getStorageSync('openId')
       if (value) {
@@ -55,7 +54,7 @@ Component({
   methods: {
     itemSizeFunc: function (item, idx) {
       let width, height;
-      if (item.type === 1 ) {
+      if ( item.type === 1 ) {
         if (item.picsArray && item.picsArray.length > 2) {
           height = ctx.transformRpx(280)
         } else {
@@ -64,6 +63,7 @@ Component({
       } else if (item.type === 2 ) {
         height = ctx.transformRpx(435)
       } else if (item.type === 3) {
+        // height = ctx.transformRpx(170)
         if (item.topImgsJson && item.topImgsJson.length > 2) {
           height = ctx.transformRpx(280)
         } else {
@@ -105,7 +105,6 @@ Component({
         }
         this.data.propAaa.data(data).then(data => {
           wx.hideLoading()
-          wx.stopPullDownRefresh()
           let newData = data.length ? data : data.records
           newData.forEach(item => {
             if (item.picsArray) {
@@ -113,7 +112,8 @@ Component({
             }
           })
           if (newData.length) {
-            ctx.append([...newData])
+
+            ctx.append(newData)
           } else {
             this.setData({
               emptyState: true

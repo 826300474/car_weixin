@@ -60,6 +60,7 @@ Page({
     }
   },
   save: function () {
+
     wx.downloadFile({
       url: this.data.img,
       success(res) {
@@ -67,7 +68,6 @@ Page({
           wx.saveImageToPhotosAlbum({
             filePath: res.tempFilePath,
             success(res) {
-              console.log(res)
               wx.showToast({
                 title: '保存成功',
                 icon: 'none'

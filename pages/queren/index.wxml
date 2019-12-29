@@ -31,7 +31,7 @@
   </view>
   <view class="san item">
     <text>优惠券</text>
-    <text style="color:#666;">暂无优惠卷</text>
+    <text style="color:#666;">暂无优惠券</text>
   </view>
   <view class="san item">
     <text>合计金额</text>
