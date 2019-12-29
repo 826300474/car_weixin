@@ -80,8 +80,8 @@
 					{{ propData.title }}
 				</view>
 				<view class="bottom_box">
-					<view>付款时间：{{ propData.payAt }}</view>
-					<view style="color:#C8262C;">合计：¥{{ propData.price }}</view>
+					<view>{{ propData.payAt }}</view>
+					<view>共{{ propData.quantity }}件 合计:¥{{ propData.price }}</view>
 				</view>
 			</view>
 			<view class="right">
