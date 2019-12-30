@@ -3,7 +3,6 @@
     <view class="tishi" style="background-color:{{shenData.customerState === 1 ? '#FFA500':'#FF4040'}}">{{ shenData.customerState === 1 ? codeName[shenData.customerState] : '您的申请已被拒绝，原因：'+ shenData.customerStateReason }}</view>
   </view>
   <view wx:if="{{ shenData.customerState === 2 }}">
-
     <view class="title" style="margin-top:10px;">
       <text>个人信息</text>
     </view>

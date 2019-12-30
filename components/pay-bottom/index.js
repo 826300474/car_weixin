@@ -24,6 +24,10 @@ Component({
     number: 1
   },
   methods: {
+    getMoney:function(){
+      console.log(555)
+      return 555
+    },
     toBuy: function () {
       this.setData({
         queren_type: false,
@@ -80,6 +84,7 @@ Component({
     buy: function () {
       profile().then(data => {
         let customerState = Number(data.customerState);
+        console.log( customerState )
         if (customerState === 0) {
           wx.showModal({
             content: '请先提交个人资料',
@@ -94,6 +99,7 @@ Component({
           })
         } else if (customerState === 1) {
           wx.showToast({
+            icon:'none',
             title: '资料审核中，请耐心等待',
           })
         } else if (customerState === 2) {
@@ -102,7 +108,7 @@ Component({
               queren_type: true
             })
           } else {
-            if (this.data.member.account > 0) {
+            if (this.data.member.account > 0 || this.data.member.consumedAmount !== null) {
               this.setData({
                 groups: [{
                   text: '微信支付',
@@ -125,6 +131,7 @@ Component({
           }
         } else if (customerState === -1) {
           wx.showToast({
+            icon:'none',
             title: '资料审核失败，无法购买',
           })
         }

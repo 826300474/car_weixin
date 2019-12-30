@@ -131,12 +131,14 @@ Page({
         })
       } else if (customerState === 1) {
         wx.showToast({
+          icon: 'none',
           title: '资料审核中，请耐心等待',
         })
       } else if (customerState === 2) {
         this.buy_next()
       } else if (customerState === -1) {
         wx.showToast({
+          icon: 'none',
           title: '资料审核失败，无法购买',
         })
       }

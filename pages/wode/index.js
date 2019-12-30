@@ -81,6 +81,7 @@ Page({
       })
     } else if (customerState === 1) {
       wx.showToast({
+        icon: 'none',
         title: '资料审核中，请耐心等待',
       })
     } else if (customerState === 2) {
@@ -89,6 +90,7 @@ Page({
       })
     } else if (customerState === -1) {
       wx.showToast({
+        icon: 'none',
         title: '资料审核失败',
       })
     }

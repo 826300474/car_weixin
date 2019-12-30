@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/ziliao/index",
     "pages/mybuy/index",
     "pages/shop/index",
     "pages/queren/index",
@@ -11,7 +12,6 @@
     "pages/wode/index",
     "pages/fenxiao/index",
     "pages/fenxiaoSheng/index",
-    "pages/ziliao/index",
     "pages/xqvideo/index",
     "pages/msg/index"
   ],

@@ -152,6 +152,7 @@ Page({
     })
   },
   formSubmit: function(e) {
+    console.log(555)
     if (e.detail.value.diqu.length === 0) {
       wx.showToast({
         title: '请选择地区',

@@ -10,10 +10,14 @@
   </view>
   <view class="er">
     <view class="title">{{ content.title }}</view>
-    <view class="box">
+    <view class="box" wx:if="{{ content.discount !== 100 }}">
      <text class="fuhao">¥</text>
       <text class="priceDiscount">{{ content.priceDiscount }}</text>
       <text class="price">{{ content.price }}</text>
+    </view>
+    <view class="box" wx:else>
+     <text class="fuhao">¥</text>
+      <text class="priceDiscount">{{ content.price }}</text>
     </view>
   </view>
   <view class="san">

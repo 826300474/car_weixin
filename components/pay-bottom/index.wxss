@@ -47,6 +47,7 @@
   text-align: center;
   border-radius: 4rpx !important;
   background: #fce718;
+  min-width: 260rpx;
 }
 
 .queren_box .price {

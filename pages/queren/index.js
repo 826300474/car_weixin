@@ -28,6 +28,9 @@ Page({
   onReady: function () {
 
   },
+  getNumber: function () {
+    return 555
+  },
   address: function () {
     let that = this;
     wx.chooseAddress({
@@ -45,14 +48,17 @@ Page({
     })
   },
   getData: function (id) {
+    let that = this;
     getXq({
       id: id
     }).then(data => {
       wx.hideLoading()
       var newStr = data.article.content.replace(/<img/g, '<img style="width:100%" ');
       data.article.content = newStr;
+      let content = data.article;
+      content.finsh_price = Number(content.discount === 100 ? content.price * that.data.number : content.priceDiscount * that.data.number).toFixed(2) 
       this.setData({
-        content: data.article,
+        content: content,
         like: data.like,
         is_buy: data.is_buy,
         member: data.member,
@@ -61,23 +67,23 @@ Page({
     })
   },
   toBug: function () {
-    if(!this.data.address){
+    if (!this.data.address) {
       wx.showToast({
         title: '请选择地址',
-        icon:'none'
+        icon: 'none'
       })
       return;
     }
-    if (this.data.member.account > 0) {
+    if (this.data.member.account > 0 || this.data.member.consumedAmount !== null) {
       this.setData({
         groups: [{
-          text: '微信支付',
-          value: 1
-        },
-        {
-          text: `储蓄支付（余额¥${this.data.member.account}）`,
-          value: 2
-        },
+            text: '微信支付',
+            value: 1
+          },
+          {
+            text: `储蓄支付（余额¥${this.data.member.account}）`,
+            value: 2
+          },
         ],
         pay_type: true,
       })
@@ -97,7 +103,7 @@ Page({
     createOrders({
       articleId: this.data.id,
       payType: e.detail.value,
-      quantity:this.data.number,
+      quantity: this.data.number,
       address: {
         province: this.data.address.provinceName,
         city: this.data.address.cityName,
@@ -141,6 +147,7 @@ Page({
           }
         })
       } else {
+
         // wx.showToast({
         //   title: '支付成功',
         //   icon: 'none'
