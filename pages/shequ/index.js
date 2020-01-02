@@ -28,11 +28,13 @@ Page({
               listParam: {
                 type: 1
               },
+              activeTab:1
             })
         }
+        that.getCategories();
       },
     })
-    this.getCategories();
+    
   },
   onReady: function () {
     this.commonList = this.selectComponent("#commonList")

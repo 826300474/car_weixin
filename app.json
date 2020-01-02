@@ -36,7 +36,7 @@
       },
       {
         "pagePath": "pages/shequ/index",
-        "text": "社区",
+        "text": "发现",
         "iconPath": "assets/Video_Line.png",
         "selectedIconPath": "assets/Video.png"
       },

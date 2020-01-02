@@ -94,8 +94,7 @@ swiper{
 }
 
 .san {
-  padding: 20rpx 20rpx 40rpx 20rpx;
-  margin-bottom: 50px;
+  padding: 20rpx 20rpx 50px 20rpx;
   color: #747474;
   margin-top: 20rpx;
   border-top: 1px solid #D9D9D9;

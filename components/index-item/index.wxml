@@ -20,7 +20,7 @@
 				{{ propData.title }}
 			</view>
 			<view class="bottom_box">
-				<view>{{ propData.viewCount }}次查看yy</view>
+				<view>{{ propData.viewCount }}次查看</view>
 				<view class="bottom_right" style="background:#e5e5e5;" wx:if="{{ propData.isCharge !== -1 }}">{{ propData.isCharge === 0 ? "免费" : "付费" }}</view>
 			</view>
 		</view>

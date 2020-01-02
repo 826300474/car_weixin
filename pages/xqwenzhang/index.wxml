@@ -12,23 +12,6 @@
     <view class="buyTishi" wx:if="{{ content.isCharge === 1 && is_buy === 0 }}">购买查看全部内容</view>
   </view>
       <pay-bottom member="{{member}}" bind:getData="getData" bind:upDataFromSon="upDataFromSon" myId="{{ myId }}" content="{{ content }}" like="{{ like }}" is_buy="{{ is_buy }}"/>
-  <!-- <view class="si">
-    <view class="left">
-      <view wx:if="{{ like }}" bindtap="golike">
-        <image src="../../assets/hearted.png"></image>
-        <text>已收藏</text>
-      </view>
-      <view wx:else bindtap="golike">
-        <image src="../../assets/heart.png"></image>
-        <text>收藏</text>
-      </view>
-      <view bindtap="fenxiang">
-        <image src="../../assets/分享.png"></image>
-        <button open-type="share" type="text">分享</button>
-      </view>
-    </view>
-    <button wx:if="{{content.isCharge === 1 && is_buy===0}}" bindgetuserinfo="onGotUserInfo" bindtap="{{ useInfo ? 'buy':''  }}" open-type="{{ useInfo ? '':'getUserInfo' }}" class="right" type="text" style="background: #FCE718!important">{{ content.price + "元 购买" }}</button>
-  </view> -->
   <!-- <view class="wu" wx:if="{{ recommend.length > 0 }}">
     <view class="title">相关推荐</view>
     <common-list id="commonList" prop-type="recommend" prop-param="{{ listParam }}" prop-data="{{ recommend }}" />
